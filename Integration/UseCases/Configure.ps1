@@ -5,14 +5,14 @@ Describe "Configuration to customize experience" {
     }
 
     Context "Bank Account Group" -Skip {
-        It "create Bank Account Group" -Tags "vB.2.0" {
+        It "create Bank Account Group" -Tags "CNF-BKG-01","vB.2.0" {
             # Requirement
             New-BankGroup -AccessToken $token -Name "MyAccountGroup" `
                 | Should -Exist
             Get-BankGroup -AccessToken $token `
                 | Should -HaveCount 1
         }
-        It "update Bank Account Group" -Tags "vB.2.1" {
+        It "update Bank Account Group" -Tags "CNF-BKG-02","vB.2.1" {
             # Pre-Requisite
             New-BankGroup -AccessToken $token -Name "MyAccountGroup"
 
@@ -23,7 +23,7 @@ Describe "Configuration to customize experience" {
             Get-BankGroup -AccessToken $token -Name "MyNewGroupName" `
                 | Should -Exist
         }
-        It "delete Bank Account Group" -Tags "vB.2.0" {
+        It "delete Bank Account Group" -Tags "CNF-BKG-03","vB.2.0" {
             # Pre-Requisite
             New-BankGroup -AccessToken $token -Name "MyAccountGroup"
 
@@ -40,13 +40,13 @@ Describe "Configuration to customize experience" {
             . $PSScriptRoot\BankMoq.ps1
         }
 
-        It "create Bank Account with Group" -Tags "vB.2.0" {
+        It "create Bank Account with Group" -Tags "CNF-BNK-01","vB.2.0" {
             # Requirement
             Add-BankAccount -AccessToken $token -Name "MyAccount" -Bank "MyBank" -Number 1234567 -Currency CanadianDollar -Group "MyAccountGroup"
             Get-BankGroup -AccessToken $token -Name "MyAccountGroup" `
                 | Should -Exist
         }
-        It "updates Bank Account with Group" -Tags "vB.2.0" {
+        It "updates Bank Account with Group" -Tags "CNF-BNK-02","vB.2.0" {
             # Pre-Requisite
             Add-BankAccount -AccessToken $token -Name "MyAccount" -Bank "MyBank" -Number 1234567 -Currency CanadianDollar
 
@@ -56,7 +56,7 @@ Describe "Configuration to customize experience" {
             Get-BankGroup -AccessToken $token -Name "MyAccountGroup" `
                 | Should -Exist
         }
-        It "list Bank Account by Group" -Tags "vB.2.1" {
+        It "list Bank Account by Group" -Tags "CNF-BNK-03","vB.2.1" {
             # Pre-Requisite
             Add-BankAccount -AccessToken $token -Name "MyAccount" -Bank "MyBank" -Number 1234567 -Currency CanadianDollar -Group "MyAccountGroup"
 
@@ -64,7 +64,7 @@ Describe "Configuration to customize experience" {
             Get-BankAccount -AccessToken $token -Group "MyAccountGroup" `
                 | Should -HaveCount 1
         }
-        It "view Group Balance" -Tags "vB.2.0" {
+        It "view Group Balance" -Tags "CNF-BNK-04","vB.2.0" {
             # Pre-Requisite
             Add-BankAccount -AccessToken $token -Name "MyAccount" -Bank "MyBank" -Number 1234567 -Currency CanadianDollar -Group "MyAccountGroup"
 
@@ -74,7 +74,7 @@ Describe "Configuration to customize experience" {
                 | Select-Object -ExpandProperty Sum
                 | Should -BeGreaterThan 0
         }
-        It "view Transactions by Group" -Tags "vB.2.2" {
+        It "view Transactions by Group" -Tags "CNF-BNK-05","vB.2.2" {
             # Pre-Requisite
             Add-BankAccount -AccessToken $token -Name "MyAccount" -Bank "MyBank" -Number 1234567 -Currency CanadianDollar -Group "MyAccountGroup"
             Add-SubCategory -AccessToken $token -CategoryName "Bills" -Name "GasBills"
