@@ -33,12 +33,6 @@ produces a fully running application. This is also where
 third-party dependencies will be matched to their defined
 component-level interface using the Adapter Pattern, so
 that they can be handed in to the corresponding component.
-### IntegrationTests
-This holds all `PowerShell` `Pester` tests that require `Moq`ing.
-### FunctionalTests
-This holds all `PowerShell` `Pester` tests that set up a fully
-operational environment and run production-like user commands against.
-Can also be thought of as "API Tests".
 ### UseCases
 This holds `PowerShell` `Pester` tests who constitute:
 - Requirements Documentation
@@ -78,6 +72,12 @@ code examples
 1. https://reqexperts.com/wp-content/uploads/2015/07/writing_good_requirements.htm
 1. https://softwareengineering.stackexchange.com/questions/163328/how-to-document-requirements-for-an-api-systematically
 
+### IntegrationTests
+This holds all `PowerShell` `Pester` tests that require `Moq`ing.
+### FunctionalTests
+This holds all `PowerShell` `Pester` tests that set up a fully
+operational environment and run production-like user commands against.
+Can also be thought of as "API Tests".
 ### REST
 This holds the `PowerShell` `scripts` that defines and exposes the
 application-level REST API, to be consumed by the `Client` component.
