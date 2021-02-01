@@ -13,7 +13,7 @@ Describe "Administration of Users and Access" {
         It "view all Categories" -Tags "ADM-CAT-02","v0.1.1","Simple" {
             # Requirement
             Get-Category -AccessToken $token `
-                | Should -HaveCount 20 # TODO: choose #
+                | Should -BeLessOrEqual 15
 
             # Rationale
             <#
