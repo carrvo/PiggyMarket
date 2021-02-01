@@ -17,7 +17,13 @@ Describe "Administration of Users and Access" {
 
             # Rationale
             <#
-            Must be of the specified number.
+            Must be of the specified number. The importance here
+            is that categories must be limited so that they can
+            retain their purpose of aggregating and summarizing
+            transactions, providing a course-grained view. If they
+            are let to be more, there is risk of overwhelming the
+            summary with too much information and no longer
+            allowing it to remain high-level.
             #>
         }
         It "create SubCategory" -Tags "ADM-CAT-03","v0.1.1","Simple" {

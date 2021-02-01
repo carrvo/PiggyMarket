@@ -99,6 +99,15 @@ Describe "Aggregates and Verifies data" {
                 | Confirm-Transaction
 
             # Rationale
+            <#
+            This requirement allows transactions to be verified by two
+            sources of authority: the recorded transaction and the bank.
+            Here, consistency is important for detecting unauthorized
+            purchases or transfers. The application should be able to
+            correlate the transaction present in the system with a new
+            transaction appearing in the bank account, within a limited
+            time-frame (otherwise notify of potential unauthorized).
+            #>
         }
         It "views Transactions by Processed Date range" -Tags "TRK-BNK-03","vB.1.3","Moderate" {
             # Pre-Requisite
