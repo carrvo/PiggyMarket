@@ -129,12 +129,44 @@ Describe "Administration of Users and Access" {
     Context "App Access" -Skip {
         It "invite other Users to share Access with" -Tags "ADM-ACC-01","v0.4.0","Complex" {
             # Requirement
+            Grant-AccountContext -Email "partner@someaddress.com"
+
+            # Rationale
+            <#
+            Couples and families, and other circumstances that cause
+            multiple users to have shared finances, may require multiple
+            users to budget together under a single context.
+            #>
         }
         It "identify what Accessing" -Tags "ADM-ACC-02","v0.4.1","Moderate" {
             # Requirement
+            Get-AccountContext -Current `
+                | Should -Exist
+
+            # Rationale
+            <#
+            The application should use the Current context in the background
+            without the user needing to specify what context they are in.
+            #>
+        }
+        It "creates new application context for Access separation" -Tags "ADM-ACC-04","v0.4.2","Complex" {
+            # Requirement
+            New-AccountContext -Name "MyOtherContext"
+            Get-AccountContext -Name "MyOtherContext" `
+                | Should -Exist
+
+            # Rationale
+            <#
+            This provides a mechanism for users to control what transactions
+            they share with other users.
+            #>
         }
         It "switch between Accessing" -Tags "ADM-ACC-03","v0.4.2","Moderate" {
             # Requirement
+            Set-AccountContext -Name "MyOtherContext"
+            Get-AccountContext -Current `
+                | Select-Object -ExpandProperty Name `
+                | Should -Be "MyOtherContext"
         }
     }
 
