@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30907.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{7663F54D-FFEE-4864-AD64-7A6CD6987F47}"
+	ProjectSection(SolutionItems) = preProject
+		CODEOWNERS = CODEOWNERS
+		LICENSE = LICENSE
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Integration", "Integration", "{C8EEA3B5-4E0D-4DA1-910F-F42DC7811DCE}"
+	ProjectSection(SolutionItems) = preProject
+		Integration\Get-Requirements.ps1 = Integration\Get-Requirements.ps1
+		Integration\README.md = Integration\README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UseCases", "UseCases", "{B8779CA2-3C27-41D6-906E-34AB38518F5B}"
+	ProjectSection(SolutionItems) = preProject
+		Integration\UseCases\Administer.ps1 = Integration\UseCases\Administer.ps1
+		Integration\UseCases\Configure.ps1 = Integration\UseCases\Configure.ps1
+		Integration\UseCases\Manager.ps1 = Integration\UseCases\Manager.ps1
+		Integration\UseCases\Purchaser.ps1 = Integration\UseCases\Purchaser.ps1
+		Integration\UseCases\Register.ps1 = Integration\UseCases\Register.ps1
+		Integration\UseCases\Reporter.ps1 = Integration\UseCases\Reporter.ps1
+		Integration\UseCases\Reviewer.ps1 = Integration\UseCases\Reviewer.ps1
+		Integration\UseCases\Tracker.ps1 = Integration\UseCases\Tracker.ps1
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B8779CA2-3C27-41D6-906E-34AB38518F5B} = {C8EEA3B5-4E0D-4DA1-910F-F42DC7811DCE}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B868A028-BD57-4B2B-A9B4-02B29A4D5304}
+	EndGlobalSection
+EndGlobal
