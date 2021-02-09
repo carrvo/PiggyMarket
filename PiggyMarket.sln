@@ -31,14 +31,26 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Authenticating", "Authenticating", "{BE8A6147-0C9A-4285-9749-E2E825A405C3}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Banking", "Banking", "{76F0860A-03F4-46DC-8A29-1CCF8C8D2B3C}"
+	ProjectSection(SolutionItems) = preProject
+		Banking\README.md = Banking\README.md
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Budgeting", "Budgeting", "{69F60EA8-3CCA-41EA-B02E-E9AED5DA2E3F}"
+	ProjectSection(SolutionItems) = preProject
+		Budgeting\README.md = Budgeting\README.md
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Client", "Client", "{2A08A6BE-252B-4842-A512-E692DF17F674}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Operating", "Operating", "{C397B481-FD4E-479B-BE1E-4443B7DD5B91}"
+	ProjectSection(SolutionItems) = preProject
+		Operating\README.md = Operating\README.md
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Reporting", "Reporting", "{E213D156-BBD4-43B2-B7E7-9F2B5974B30C}"
+	ProjectSection(SolutionItems) = preProject
+		Reporting\README.md = Reporting\README.md
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Banking.Interfaces", "Banking\Banking.Interfaces\Banking.Interfaces.csproj", "{D03756F2-6E1E-40FE-88B8-8FC99267D8E7}"
 EndProject
@@ -79,16 +91,19 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Budgeting.UnitTests", "Budgeting\Budgeting.UnitTests\Budgeting.UnitTests.csproj", "{ABAA2381-A478-4704-A5E0-D91AF6BB056C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Accounting", "Accounting", "{EC36138D-C83B-40CF-8309-6F32D7DBC690}"
+	ProjectSection(SolutionItems) = preProject
+		Accounting\README.md = Accounting\README.md
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Reporting.Interfaces", "Reporting\Reporting.Interfaces\Reporting.Interfaces.csproj", "{4D4424FB-8CE4-4F5E-8D26-3B0EA6071445}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Accounting.Interfaces", "Accounting\Accounting.Interfaces\Accounting.Interfaces.csproj", "{CF392FE5-6E0F-4294-BAB2-0C28F56C94C7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Accounting.Interfaces", "Accounting\Accounting.Interfaces\Accounting.Interfaces.csproj", "{CF392FE5-6E0F-4294-BAB2-0C28F56C94C7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Accounting.Cmdlets", "Accounting\Accounting.Cmdlets\Accounting.Cmdlets.csproj", "{B8A75617-7B15-4456-84D0-82FB766BC3E4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Accounting.Cmdlets", "Accounting\Accounting.Cmdlets\Accounting.Cmdlets.csproj", "{B8A75617-7B15-4456-84D0-82FB766BC3E4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Accounting.Implementation", "Accounting\Accounting.Implementation\Accounting.Implementation.csproj", "{13B300FB-7E6A-40D1-B69F-4115B99AF960}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Accounting.Implementation", "Accounting\Accounting.Implementation\Accounting.Implementation.csproj", "{13B300FB-7E6A-40D1-B69F-4115B99AF960}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Accounting.UnitTests", "Accounting\Accounting.UnitTests\Accounting.UnitTests.csproj", "{D8581C21-2773-4850-B511-02F78545393B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Accounting.UnitTests", "Accounting\Accounting.UnitTests\Accounting.UnitTests.csproj", "{D8581C21-2773-4850-B511-02F78545393B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
