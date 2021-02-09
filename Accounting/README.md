@@ -1,4 +1,4 @@
-# Banking
+# Accounting
 
 ## Purpose
 This component houses all of the central types that
