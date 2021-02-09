@@ -31,7 +31,11 @@ namespace Finance.Management.Service.Operating.Interfaces
     /// as a <see cref="ISubCategory"> with the roll-up to
     /// <see "ICategory"> (for the purposes of <see cref="IBudgeting">).
     /// </summary>
-    public interface ITransaction<SC, BA, Ts> : ISubCategory, ITrendable where SC : ISubCategpry, BA : IBankAccount, Ts : IEnumerable<ITag>
+    public interface ITransaction<SC, BA, PM, Ts>
+        where SC : ISubCategory<ICategory>
+        where BA : IBankAccount
+        where PM : IPaymentMethod
+        where Ts : IEnumerable<ITag>
     {
         /// <summary>
         /// Identifies the <see cref="ITransaction" />
@@ -53,12 +57,11 @@ namespace Finance.Management.Service.Operating.Interfaces
         /// The physical <see cref="IBankAccount" /> that
         /// the <see cref="ITransaction" /> belongs to.
         /// </summary>
-        BA BankAccount { get; }
+        BA? BankAccount { get; }
 
-        // Cash, Cheque, Debit, Credit
         /// <summary>
         /// </summary>
-        PM PaymentMethod
+        PM PaymentMethod { get; }
 
         /// <summary>
         /// The other side of the monetary funds movement.

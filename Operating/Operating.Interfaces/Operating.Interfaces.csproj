@@ -15,4 +15,8 @@
     <DocumentationFile>..\..\Integration\Configuration\bin\Operating.Interfaces.xml</DocumentationFile>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\Banking\Banking.Interfaces\Banking.Interfaces.csproj" />
+  </ItemGroup>
+
 </Project>

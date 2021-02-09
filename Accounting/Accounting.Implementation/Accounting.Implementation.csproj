@@ -15,4 +15,10 @@
     <DocumentationFile>..\..\Integration\Configuration\bin\Accounting.Implementation.xml</DocumentationFile>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\Budgeting\Budgeting.Interfaces\Budgeting.Interfaces.csproj" />
+    <ProjectReference Include="..\..\Reporting\Reporting.Interfaces\Reporting.Interfaces.csproj" />
+    <ProjectReference Include="..\Accounting.Interfaces\Accounting.Interfaces.csproj" />
+  </ItemGroup>
+
 </Project>

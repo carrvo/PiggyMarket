@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using Finance.Management.Service.Reporting.Interfaces;
 
 namespace Finance.Management.Service.Accounting.Interfaces
 {
@@ -20,7 +19,7 @@ namespace Finance.Management.Service.Accounting.Interfaces
     /// aggregate and summarize <see cref="ITransaction" />s,
     /// providing a course-grained view.
     /// </summary>
-    public interface ICategory : ITrendable, IAccountable
+    public interface ICategory
     {
         /// <summary>
         /// Identifies the <see cref="ICategory" /> and its meaning.
@@ -37,5 +36,10 @@ namespace Finance.Management.Service.Accounting.Interfaces
         /// <see cref="ICategory" />.
         /// </summary>
         Double CurrentFunds { get; set; }
+
+        /// <summary>
+        /// The monetary system the value is being stored in.
+        /// </summary>
+        ECurrency Currency { get; }
     }
 }

@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using Finance.Management.Service.Reporting.Interfaces;
 
 namespace Finance.Management.Service.Accounting.Interfaces
 {
