@@ -4,6 +4,18 @@
     <TargetFramework>net5.0</TargetFramework>
 
     <IsPackable>false</IsPackable>
+
+    <RootNamespace>Finance.Management.Service.Authenticating.UnitTests</RootNamespace>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>..\..\Integration\Configuration\bin\</OutputPath>
+    <DocumentationFile>..\..\Integration\Configuration\bin\Authenticating.UnitTests.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <OutputPath>..\..\Integration\Configuration\bin\</OutputPath>
+    <DocumentationFile>..\..\Integration\Configuration\bin\Authenticating.UnitTests.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>

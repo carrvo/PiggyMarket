@@ -2,6 +2,17 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>Finance.Management.Service.Reporting.Cmdlets</RootNamespace>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>..\..\Integration\Configuration\bin\</OutputPath>
+    <DocumentationFile>..\..\Integration\Configuration\bin\Reporting.Cmdlets.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <OutputPath>..\..\Integration\Configuration\bin\</OutputPath>
+    <DocumentationFile>..\..\Integration\Configuration\bin\Reporting.Cmdlets.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>

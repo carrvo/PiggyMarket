@@ -65,3 +65,7 @@ crashlytics-build.properties
 *.nuget.g.targets
 *project.assets.json
 *project.nuget.cache
+*net5.0/*.FileListAbsolute.txt
+*net5.0/*.CopyComplete
+*net5.0/*ref/*
+*net5.0/*.dll
