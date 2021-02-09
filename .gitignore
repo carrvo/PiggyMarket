@@ -58,3 +58,10 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+# Custom
+*.cache
+*.nuget.dgspec.json
+*.nuget.g.props
+*.nuget.g.targets
+*project.assets.json
+*project.nuget.cache

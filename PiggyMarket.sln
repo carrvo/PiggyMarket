@@ -40,45 +40,47 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Operating", "Operating", "{
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Reporting", "Reporting", "{E213D156-BBD4-43B2-B7E7-9F2B5974B30C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Banking.Interfaces", "Banking\Banking.Interfaces\Banking.Interfaces.csproj", "{D03756F2-6E1E-40FE-88B8-8FC99267D8E7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Banking.Interfaces", "Banking\Banking.Interfaces\Banking.Interfaces.csproj", "{D03756F2-6E1E-40FE-88B8-8FC99267D8E7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Banking.Cmdlets", "Banking\Banking.Cmdlets\Banking.Cmdlets.csproj", "{E053325E-0098-4F81-A3AB-36A062A023A7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Banking.Cmdlets", "Banking\Banking.Cmdlets\Banking.Cmdlets.csproj", "{E053325E-0098-4F81-A3AB-36A062A023A7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Banking.Implementation", "Banking\Banking.Implementation\Banking.Implementation.csproj", "{C40110E6-8935-4CB5-A73F-E8033EBDCF63}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Banking.Implementation", "Banking\Banking.Implementation\Banking.Implementation.csproj", "{C40110E6-8935-4CB5-A73F-E8033EBDCF63}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Banking.UnitTests", "Banking\Banking.UnitTests\Banking.UnitTests.csproj", "{FCBEAD99-BFC4-484D-BA2D-A3C60C2291A6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Banking.UnitTests", "Banking\Banking.UnitTests\Banking.UnitTests.csproj", "{FCBEAD99-BFC4-484D-BA2D-A3C60C2291A6}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Operating.Interfaces", "Operating\Operating.Interfaces\Operating.Interfaces.csproj", "{255DB6BE-7AED-4429-BCCA-C3F859A5633D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Operating.Cmdlets", "Operating\Operating.Cmdlets\Operating.Cmdlets.csproj", "{D30407E4-3D38-46D8-85DB-93AEB231A738}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Operating.Cmdlets", "Operating\Operating.Cmdlets\Operating.Cmdlets.csproj", "{D30407E4-3D38-46D8-85DB-93AEB231A738}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Operating.Implementation", "Operating\Operating.Implementation\Operating.Implementation.csproj", "{E8D5BAE4-C0E1-4123-9CF6-363881F179B7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Operating.Implementation", "Operating\Operating.Implementation\Operating.Implementation.csproj", "{E8D5BAE4-C0E1-4123-9CF6-363881F179B7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Operating.UnitTests", "Operating\Operating.UnitTests\Operating.UnitTests.csproj", "{4B538C44-032A-424E-9742-CF7441E7B29D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Operating.UnitTests", "Operating\Operating.UnitTests\Operating.UnitTests.csproj", "{4B538C44-032A-424E-9742-CF7441E7B29D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reporting.Interfaces", "Reporting\Reporting.Interfaces\Reporting.Interfaces.csproj", "{64FC79C1-BE08-4049-9F56-9216782C4D94}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Reporting.Cmdlets", "Reporting\Reporting.Cmdlets\Reporting.Cmdlets.csproj", "{557775E5-5FD3-4C3E-813B-92CF981096CD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reporting.Cmdlets", "Reporting\Reporting.Cmdlets\Reporting.Cmdlets.csproj", "{557775E5-5FD3-4C3E-813B-92CF981096CD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Reporting.Implementation", "Reporting\Reporting.Implementation\Reporting.Implementation.csproj", "{CF930FA2-ACF4-408A-A09B-7DCB45F804AE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reporting.Implementation", "Reporting\Reporting.Implementation\Reporting.Implementation.csproj", "{CF930FA2-ACF4-408A-A09B-7DCB45F804AE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Reporting.UnitTests", "Reporting\Reporting.UnitTests\Reporting.UnitTests.csproj", "{36101BFB-A73B-4F92-8873-3E8E9E8F604D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reporting.UnitTests", "Reporting\Reporting.UnitTests\Reporting.UnitTests.csproj", "{36101BFB-A73B-4F92-8873-3E8E9E8F604D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Authenticating.Interfaces", "Authenticating\Authenticating.Interfaces\Authenticating.Interfaces.csproj", "{59ECA3BC-288E-42C7-ACE3-2CE2F13EE3E6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Authenticating.Interfaces", "Authenticating\Authenticating.Interfaces\Authenticating.Interfaces.csproj", "{59ECA3BC-288E-42C7-ACE3-2CE2F13EE3E6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Authenticating.Cmdlets", "Authenticating\Authenticating.Cmdlets\Authenticating.Cmdlets.csproj", "{C74C35C3-1890-46A6-9D67-17BEA4533A2A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Authenticating.Cmdlets", "Authenticating\Authenticating.Cmdlets\Authenticating.Cmdlets.csproj", "{C74C35C3-1890-46A6-9D67-17BEA4533A2A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Authenticating.UnitTests", "Authenticating\Authenticating.UnitTests\Authenticating.UnitTests.csproj", "{DBCDC535-B01C-4B49-A07D-56104211B78C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Authenticating.UnitTests", "Authenticating\Authenticating.UnitTests\Authenticating.UnitTests.csproj", "{DBCDC535-B01C-4B49-A07D-56104211B78C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Authenticating.Implementation", "Authenticating\Authenticating.Implementation\Authenticating.Implementation.csproj", "{58B195DC-2918-4A83-A221-5F68488B7955}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Authenticating.Implementation", "Authenticating\Authenticating.Implementation\Authenticating.Implementation.csproj", "{58B195DC-2918-4A83-A221-5F68488B7955}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Budgeting.Interfaces", "Budgeting\Budgeting.Interfaces\Budgeting.Interfaces.csproj", "{1AE72169-CD38-4AC4-9427-25B6F0C9537F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Budgeting.Interfaces", "Budgeting\Budgeting.Interfaces\Budgeting.Interfaces.csproj", "{1AE72169-CD38-4AC4-9427-25B6F0C9537F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Budgeting.Cmdlets", "Budgeting\Budgeting.Cmdlets\Budgeting.Cmdlets.csproj", "{3795CE4B-767A-4631-8154-B28A8C598286}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Budgeting.Cmdlets", "Budgeting\Budgeting.Cmdlets\Budgeting.Cmdlets.csproj", "{3795CE4B-767A-4631-8154-B28A8C598286}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Budgeting.Implementation", "Budgeting\Budgeting.Implementation\Budgeting.Implementation.csproj", "{DD575B3D-6A74-4CF9-9F67-6139973D03B0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Budgeting.Implementation", "Budgeting\Budgeting.Implementation\Budgeting.Implementation.csproj", "{DD575B3D-6A74-4CF9-9F67-6139973D03B0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Budgeting.UnitTests", "Budgeting\Budgeting.UnitTests\Budgeting.UnitTests.csproj", "{ABAA2381-A478-4704-A5E0-D91AF6BB056C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Budgeting.UnitTests", "Budgeting\Budgeting.UnitTests\Budgeting.UnitTests.csproj", "{ABAA2381-A478-4704-A5E0-D91AF6BB056C}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Accounting", "Accounting", "{EC36138D-C83B-40CF-8309-6F32D7DBC690}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reporting.Interfaces", "Reporting\Reporting.Interfaces\Reporting.Interfaces.csproj", "{4D4424FB-8CE4-4F5E-8D26-3B0EA6071445}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -118,10 +120,6 @@ Global
 		{4B538C44-032A-424E-9742-CF7441E7B29D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4B538C44-032A-424E-9742-CF7441E7B29D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4B538C44-032A-424E-9742-CF7441E7B29D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{64FC79C1-BE08-4049-9F56-9216782C4D94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{64FC79C1-BE08-4049-9F56-9216782C4D94}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{64FC79C1-BE08-4049-9F56-9216782C4D94}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{64FC79C1-BE08-4049-9F56-9216782C4D94}.Release|Any CPU.Build.0 = Release|Any CPU
 		{557775E5-5FD3-4C3E-813B-92CF981096CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{557775E5-5FD3-4C3E-813B-92CF981096CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{557775E5-5FD3-4C3E-813B-92CF981096CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -166,6 +164,10 @@ Global
 		{ABAA2381-A478-4704-A5E0-D91AF6BB056C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ABAA2381-A478-4704-A5E0-D91AF6BB056C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ABAA2381-A478-4704-A5E0-D91AF6BB056C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D4424FB-8CE4-4F5E-8D26-3B0EA6071445}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D4424FB-8CE4-4F5E-8D26-3B0EA6071445}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D4424FB-8CE4-4F5E-8D26-3B0EA6071445}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D4424FB-8CE4-4F5E-8D26-3B0EA6071445}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -180,7 +182,6 @@ Global
 		{D30407E4-3D38-46D8-85DB-93AEB231A738} = {C397B481-FD4E-479B-BE1E-4443B7DD5B91}
 		{E8D5BAE4-C0E1-4123-9CF6-363881F179B7} = {C397B481-FD4E-479B-BE1E-4443B7DD5B91}
 		{4B538C44-032A-424E-9742-CF7441E7B29D} = {C397B481-FD4E-479B-BE1E-4443B7DD5B91}
-		{64FC79C1-BE08-4049-9F56-9216782C4D94} = {E213D156-BBD4-43B2-B7E7-9F2B5974B30C}
 		{557775E5-5FD3-4C3E-813B-92CF981096CD} = {E213D156-BBD4-43B2-B7E7-9F2B5974B30C}
 		{CF930FA2-ACF4-408A-A09B-7DCB45F804AE} = {E213D156-BBD4-43B2-B7E7-9F2B5974B30C}
 		{36101BFB-A73B-4F92-8873-3E8E9E8F604D} = {E213D156-BBD4-43B2-B7E7-9F2B5974B30C}
@@ -192,6 +193,7 @@ Global
 		{3795CE4B-767A-4631-8154-B28A8C598286} = {69F60EA8-3CCA-41EA-B02E-E9AED5DA2E3F}
 		{DD575B3D-6A74-4CF9-9F67-6139973D03B0} = {69F60EA8-3CCA-41EA-B02E-E9AED5DA2E3F}
 		{ABAA2381-A478-4704-A5E0-D91AF6BB056C} = {69F60EA8-3CCA-41EA-B02E-E9AED5DA2E3F}
+		{4D4424FB-8CE4-4F5E-8D26-3B0EA6071445} = {E213D156-BBD4-43B2-B7E7-9F2B5974B30C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B868A028-BD57-4B2B-A9B4-02B29A4D5304}
