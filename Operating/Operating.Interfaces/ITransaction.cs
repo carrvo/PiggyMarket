@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
-using Finance.Management.Service.Accounting;
-using Finance.Management.Service.Banking;
+using Finance.Management.Service.Accounting.Interfaces;
+using Finance.Management.Service.Banking.Interfaces;
 
-namespace Finance.Management.Service.Operating
+namespace Finance.Management.Service.Operating.Interfaces
 {
     /// <summary>
     /// Defines a type that represents monetary funds moving or flowing.

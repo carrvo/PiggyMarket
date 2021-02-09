@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
-using Finance.Management.Service.Reporting;
-using Finance.Management.Service.Budgeting;
+using Finance.Management.Service.Reporting.Interfaces;
+using Finance.Management.Service.Budgeting.Interfaces;
 
-namespace Finance.Management.Service.Accounting
+namespace Finance.Management.Service.Accounting.Interfaces
 {
     /// <summary>
     /// Defines a type to extend the concept of <see cref="ICategory" />.

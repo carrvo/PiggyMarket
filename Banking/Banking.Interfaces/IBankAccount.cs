@@ -1,10 +1,10 @@
 using System;
 using System.Collections.Generic;
-using Finance.Management.Service.Accounting;
-using Finance.Management.Service.Reporting;
-using Finance.Management.Service.Operating;
+using Finance.Management.Service.Accounting.Interfaces;
+using Finance.Management.Service.Reporting.Interfaces;
+using Finance.Management.Service.Operating.Interfaces;
 
-namespace Finance.Management.Service.Banking
+namespace Finance.Management.Service.Banking.Interfaces
 {
     /// <summary>
     /// Defines a type to represent a physical bank account.

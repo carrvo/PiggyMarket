@@ -1,10 +1,10 @@
 using System;
 using System.Collections.Generic;
-using Finance.Management.Service.Accounting;
-using Finance.Management.Service.Reporting;
-using Finance.Management.Service.Operating;
+using Finance.Management.Service.Accounting.Interfaces;
+using Finance.Management.Service.Reporting.Interfaces;
+using Finance.Management.Service.Operating.Interfaces;
 
-namespace Finance.Management.Service.Budgeting
+namespace Finance.Management.Service.Budgeting.Interfaces
 {
     /// <summary>
     /// Defines a type that is used for monetary

@@ -1,6 +1,6 @@
 using System;
 
-namespace Finance.Management.Service.Reporting
+namespace Finance.Management.Service.Reporting.Interfaces
 {
     /// <summary>
     /// Defines a type to be used for <see cref="ITracking" /> purposes.
