@@ -1,5 +1,5 @@
 using System;
-using Finance.Management.Service.Reporting.Interfaces;
+using Finance.Management.Service.Accounting.Interfaces;
 
 namespace Finance.Management.Service.Operating.Interfaces
 {

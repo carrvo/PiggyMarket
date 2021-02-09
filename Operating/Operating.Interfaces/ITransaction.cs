@@ -26,10 +26,10 @@ namespace Finance.Management.Service.Operating.Interfaces
     /// monetary value entering, thus be positive (+) with
     /// the same value.
     ///
-    /// With the ability to itemize <see cref="ITransaction">s,
+    /// With the ability to itemize <see cref="ITransaction" />s,
     /// common recurring items can be treated in the same fashion
-    /// as a <see cref="ISubCategory"> with the roll-up to
-    /// <see "ICategory"> (for the purposes of <see cref="IBudgeting">).
+    /// as a <see cref="ISubCategory" /> with the roll-up to
+    /// <see cref="ICategory" /> (for the purposes of <see cref="IBudgeting" />).
     /// </summary>
     public interface ITransaction<SC, BA, PM, Ts>
         where SC : ISubCategory<ICategory>
@@ -47,8 +47,8 @@ namespace Finance.Management.Service.Operating.Interfaces
         /// The <see cref="ISubCategpry" /> that gives
         /// the <see cref="ITransaction" /> meaning.
         ///
-        /// When the <see cref="ISubCategory"> is changed,
-        /// the corresponding <see cref="ICategory.Funds">
+        /// When the <see cref="ISubCategory" /> is changed,
+        /// the corresponding <see cref="ICategory.CurrentFunds" />
         /// need to be adjusted.
         /// </summary>
         SC SubCategory { get; set; }
@@ -79,15 +79,15 @@ namespace Finance.Management.Service.Operating.Interfaces
         Double Price { get; }
 
         /// <summary>
-        /// Splits the <see cref="ITransaction"> into two whose
-        /// <see cref="Price">s sum up to the original <see cref="Price">.
+        /// Splits the <see cref="ITransaction" /> into two whose
+        /// <see cref="Price" />s sum up to the original <see cref="Price" />.
         ///
         /// Allows for the itemization of transactions.
         /// </summary>
-        /// <paramref="originalName">New name for the original <see cref="ITransaction">.</>
-        /// <paramref="newName">New name for the new <see cref="ITransaction">.</>
-        /// <paramref="newPrice"><see cref="Price"> for the new <see cref="ITransaction">,
-        /// whose value is subtracted from the original <see cref="ITransaction">.</>
+        /// <param name="originalName">New name for the original <see cref="ITransaction">.<param/>
+        /// <param name="newName">New name for the new <see cref="ITransaction">.<param/>
+        /// <param name="newPrice"><see cref="Price"> for the new <see cref="ITransaction">,
+        /// whose value is subtracted from the original <see cref="ITransaction">.<param/>
         void Split(String originalName, String newName, Double newPrice);
 
         /// <summary>
