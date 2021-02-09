@@ -10,7 +10,7 @@ namespace Finance.Management.Service.Operating.Interfaces
     /// These work like <see cref="Boolean" />s
     /// and either the meaning applies or not.
     /// </summary>
-    public interface ITag : ITrendable
+    public interface ITag
     {
         /// <summary>
         /// Identifies the meta-data meaning.

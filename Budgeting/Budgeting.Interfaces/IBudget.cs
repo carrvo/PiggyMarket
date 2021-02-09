@@ -1,8 +1,6 @@
 using System;
 using System.Collections.Generic;
 using Finance.Management.Service.Accounting.Interfaces;
-using Finance.Management.Service.Reporting.Interfaces;
-using Finance.Management.Service.Operating.Interfaces;
 
 namespace Finance.Management.Service.Budgeting.Interfaces
 {
@@ -39,7 +37,9 @@ namespace Finance.Management.Service.Budgeting.Interfaces
     /// lifestyle, but to determine if such a lifestyle is
     /// affordable for the user.
     /// </summary>
-    public interface IBudget<C, SC> where C : ICategory, SC : ISubCategory
+    public interface IBudget<C, SC>
+        where C : ICategory
+        where SC : ISubCategory<C>
     {
         /// <summary>
         /// Identifies the <see cref="IBudget" /> and is

@@ -1,7 +1,5 @@
 using System;
 using System.Collections.Generic;
-using Finance.Management.Service.Reporting.Interfaces;
-using Finance.Management.Service.Budgeting.Interfaces;
 
 namespace Finance.Management.Service.Accounting.Interfaces
 {
@@ -27,7 +25,8 @@ namespace Finance.Management.Service.Accounting.Interfaces
     /// can still, however, be indirectly accomplished through
     /// the use of a <see cref="ITracking" />.
     /// </summary>
-    public interface ISubCategory<C> : ITrendable where C : ICategory
+    public interface ISubCategory<C>
+        where C : ICategory
     {
         /// <summary>
         /// Identifies the <see cref="ISubCategpry" /> and its meaning.

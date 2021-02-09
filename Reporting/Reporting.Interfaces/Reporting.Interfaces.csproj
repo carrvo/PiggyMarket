@@ -15,4 +15,8 @@
     <DocumentationFile>..\..\Integration\Configuration\bin\Reporting.Interfaces.xml</DocumentationFile>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\Operating\Operating.Interfaces\Operating.Interfaces.csproj" />
+  </ItemGroup>
+
 </Project>

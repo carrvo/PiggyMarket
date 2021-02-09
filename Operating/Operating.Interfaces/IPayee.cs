@@ -8,7 +8,7 @@ namespace Finance.Management.Service.Operating.Interfaces
     /// monetary funds are transfered to (through
     /// <see cref="ITransaction" />s).
     /// </summary>
-    public interface IPayee : ITrendable
+    public interface IPayee
     {
         /// <summary>
         /// Identifies the party the monetary
