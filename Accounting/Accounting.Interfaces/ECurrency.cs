@@ -1,6 +1,6 @@
 using System;
 
-namespace Finance.Management.Service.Accounting
+namespace Finance.Management.Service.Accounting.Interfaces
 {
     /// <summary>
     /// The currency of a monetary value.

@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
-using Finance.Management.Service.Banking;
-using Finance.Management.Service.Operating;
+using Finance.Management.Service.Banking.Interfaces;
+using Finance.Management.Service.Operating.Interfaces;
 
-namespace Finance.Management.Service.Reporting
+namespace Finance.Management.Service.Reporting.Interfaces
 {
     interface ITracking<FilterCriteria, Ts> where FilterCriteria : IEnumerable<ITrendable>, Ts : IEnumerable<ITransactions>
     {

@@ -1,7 +1,7 @@
 using System;
-using Finance.Management.Service.Reporting;
+using Finance.Management.Service.Reporting.Interfaces;
 
-namespace Finance.Management.Service.Operating
+namespace Finance.Management.Service.Operating.Interfaces
 {
     /// <summary>
     /// Defines a type to provide additional meta-data
