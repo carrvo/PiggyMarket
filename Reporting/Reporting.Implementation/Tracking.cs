@@ -18,9 +18,9 @@ namespace Finance.Management.Service.Reporting.Implementation
     {
         public string Name => throw new NotImplementedException();
 
-        public Date Start => throw new NotImplementedException();
+        public DateTime Start => throw new NotImplementedException();
 
-        public Date End => throw new NotImplementedException();
+        public DateTime End => throw new NotImplementedException();
 
         public TTransactions Transactions => throw new NotImplementedException();
 

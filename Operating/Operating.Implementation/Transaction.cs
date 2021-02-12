@@ -30,9 +30,9 @@ namespace Finance.Management.Service.Operating.Implementation
 
         public ECurrency Currency => throw new NotImplementedException();
 
-        public Date Posted => throw new NotImplementedException();
+        public DateTime Posted => throw new NotImplementedException();
 
-        public Date Processed { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public DateTime Processed { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public string Comment { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public TTags Tags { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
