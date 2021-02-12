@@ -10,9 +10,11 @@ using System.Threading.Tasks;
 
 namespace Finance.Management.Service.Reporting.Implementation
 {
-    class Tracking<FilterCriteria, Ts> : ITracking<FilterCriteria, Ts>
-        where FilterCriteria : IEnumerable<ITrendable>
-        where Ts : IEnumerable<ITransaction<ISubCategory<ICategory>, IBankAccount, IPaymentMethod, IEnumerable<ITag>>>
+    using ITransaction = ITransaction<ISubCategory<ICategory>, IBankAccount, IPaymentMethod, IEnumerable<ITag>>;
+
+    class Tracking<TFilterCriteria, TTransactions> : ITracking<TFilterCriteria, TTransactions>
+        where TFilterCriteria : IEnumerable<ITrendable>
+        where TTransactions : IEnumerable<ITransaction>
     {
         public string Name => throw new NotImplementedException();
 
@@ -20,7 +22,7 @@ namespace Finance.Management.Service.Reporting.Implementation
 
         public Date End => throw new NotImplementedException();
 
-        public Ts Transactions => throw new NotImplementedException();
+        public TTransactions Transactions => throw new NotImplementedException();
 
         public double Actual => throw new NotImplementedException();
 

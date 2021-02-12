@@ -25,8 +25,8 @@ namespace Finance.Management.Service.Accounting.Interfaces
     /// can still, however, be indirectly accomplished through
     /// the use of a <see cref="ITracking" />.
     /// </summary>
-    public interface ISubCategory<C>
-        where C : ICategory
+    public interface ISubCategory<TCategory>
+        where TCategory : ICategory
     {
         /// <summary>
         /// Identifies the <see cref="ISubCategpry" /> and its meaning.
@@ -41,6 +41,6 @@ namespace Finance.Management.Service.Accounting.Interfaces
         /// <summary>
         /// The <see cref="ICategory" /> that it corresponds to.
         /// </summary>
-        C Category { get; }
+        TCategory Category { get; }
     }
 }
