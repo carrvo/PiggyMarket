@@ -10,7 +10,7 @@ namespace Finance.Management.Service.Banking.Implementation
 {
     class PaymentMethod : IPaymentMethod, ITrendable
     {
-        String Name
+        public String Name
         {
             get
             {
@@ -18,6 +18,6 @@ namespace Finance.Management.Service.Banking.Implementation
             }
         }
 
-        EPaymentMethod Method => throw new NotImplementedException();
+        public EPaymentMethod Method => throw new NotImplementedException();
     }
 }

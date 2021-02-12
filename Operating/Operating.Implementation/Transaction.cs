@@ -18,7 +18,12 @@ namespace Finance.Management.Service.Operating.Implementation
         where TTags : IEnumerable<ITag>
     {
         public string Name { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+
+        public string Description => throw new NotImplementedException();
+
         public TSubCategory SubCategory { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+
+        public ICategory Category => throw new NotImplementedException();
 
         public TBankAccount? BankAccount => throw new NotImplementedException();
 
@@ -33,7 +38,9 @@ namespace Finance.Management.Service.Operating.Implementation
         public DateTime Posted => throw new NotImplementedException();
 
         public DateTime Processed { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+
         public string Comment { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+
         public TTags Tags { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
         public string ReceiptID => throw new NotImplementedException();
