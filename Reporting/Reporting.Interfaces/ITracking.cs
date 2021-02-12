@@ -13,8 +13,8 @@ namespace Finance.Management.Service.Reporting.Interfaces
         where TTransactions : IEnumerable<ITransaction>
     {
         String Name { get; }
-        Date Start { get; }
-        Date End { get; }
+        DateTime Start { get; }
+        DateTime End { get; }
         TTransactions Transactions { get; }
         Double Actual { get; }
         Double? Target { get; }

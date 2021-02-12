@@ -100,7 +100,7 @@ namespace Finance.Management.Service.Operating.Interfaces
         /// Date that the <see cref="ITransaction" />
         /// took part on.
         /// </summary>
-        Date Posted { get; }
+        DateTime Posted { get; }
 
         /// <summary>
         /// Date that the <see cref="IBankAccount" />
@@ -114,7 +114,7 @@ namespace Finance.Management.Service.Operating.Interfaces
         /// occuring after business hours or other internal
         /// reasons, like for security.
         /// </summary>
-        Date Processed { get; set; }
+        DateTime Processed { get; set; }
 
         /// <summary>
         /// Any additional unstructured information to be
