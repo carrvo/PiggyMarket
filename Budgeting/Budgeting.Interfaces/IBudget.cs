@@ -37,9 +37,9 @@ namespace Finance.Management.Service.Budgeting.Interfaces
     /// lifestyle, but to determine if such a lifestyle is
     /// affordable for the user.
     /// </summary>
-    public interface IBudget<C, SC>
-        where C : ICategory
-        where SC : ISubCategory<C>
+    public interface IBudget<TCategory, TSubCategory>
+        where TCategory : ICategory
+        where TSubCategory : ISubCategory<TCategory>
     {
         /// <summary>
         /// Identifies the <see cref="IBudget" /> and is
@@ -49,7 +49,7 @@ namespace Finance.Management.Service.Budgeting.Interfaces
         /// allocated to this <see cref="IAccountable" />
         /// as funds.
         /// </summary>
-        C Category { get; }
+        TCategory Category { get; }
 
         /// <summary>
         /// Offered for high-fidelity <see cref="IBudget" />ing.
@@ -60,7 +60,7 @@ namespace Finance.Management.Service.Budgeting.Interfaces
         /// a <see cref="ICategory" /> directly or
         /// a <see cref="ISubCategory" /> indirectly.
         /// </summary>
-        SC? SubCategory { get; }
+        TSubCategory? SubCategory { get; }
 
         /// <summary>
         /// The monetary value that is being allocated

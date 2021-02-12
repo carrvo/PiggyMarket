@@ -31,11 +31,11 @@ namespace Finance.Management.Service.Operating.Interfaces
     /// as a <see cref="ISubCategory" /> with the roll-up to
     /// <see cref="ICategory" /> (for the purposes of <see cref="IBudgeting" />).
     /// </summary>
-    public interface ITransaction<SC, BA, PM, Ts>
-        where SC : ISubCategory<ICategory>
-        where BA : IBankAccount
-        where PM : IPaymentMethod
-        where Ts : IEnumerable<ITag>
+    public interface ITransaction<TSubCategory, TBanckAccount, TPaymentMethod, TTags>
+        where TSubCategory : ISubCategory<ICategory>
+        where TBanckAccount : IBankAccount
+        where TPaymentMethod : IPaymentMethod
+        where TTags : IEnumerable<ITag>
     {
         /// <summary>
         /// Identifies the <see cref="ITransaction" />
@@ -51,17 +51,17 @@ namespace Finance.Management.Service.Operating.Interfaces
         /// the corresponding <see cref="ICategory.CurrentFunds" />
         /// need to be adjusted.
         /// </summary>
-        SC SubCategory { get; set; }
+        TSubCategory SubCategory { get; set; }
 
         /// <summary>
         /// The physical <see cref="IBankAccount" /> that
         /// the <see cref="ITransaction" /> belongs to.
         /// </summary>
-        BA? BankAccount { get; }
+        TBanckAccount? BankAccount { get; }
 
         /// <summary>
         /// </summary>
-        PM PaymentMethod { get; }
+        TPaymentMethod PaymentMethod { get; }
 
         /// <summary>
         /// The other side of the monetary funds movement.
@@ -128,7 +128,7 @@ namespace Finance.Management.Service.Operating.Interfaces
         /// information or meta-data to be added to the
         /// <see cref="ITransaction" /> for the user's benefit.
         /// </summary>
-        Ts Tags { get; set; }
+        TTags Tags { get; set; }
 
         /// <summary>
         /// An identifier for the physical receipt that a
