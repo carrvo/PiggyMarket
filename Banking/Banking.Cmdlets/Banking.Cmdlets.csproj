@@ -17,10 +17,6 @@
 
   <ItemGroup>
     <PackageReference Include="System.Management.Automation" Version="7.1.1" />
-    <PackageReference Include="XmlDoc2CmdletDoc" Version="0.3.0">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
   </ItemGroup>
 
 </Project>
