@@ -1,4 +1,5 @@
 ﻿using Finance.Management.Service.Accounting.Interfaces;
+using Finance.Management.Service.Authenticating.Interfaces;
 using Finance.Management.Service.Banking.Interfaces;
 using Finance.Management.Service.Operating.Interfaces;
 using Finance.Management.Service.Reporting.Interfaces;
@@ -12,6 +13,8 @@ namespace Finance.Management.Service.Banking.Implementation
 {
     class BankAccount : IBankAccount, ITrendable, IAccountable, IPayee
     {
+        protected IAccessToken AccessToken { get; }
+
         public string Name => throw new NotImplementedException();
 
         public string BankName => throw new NotImplementedException();

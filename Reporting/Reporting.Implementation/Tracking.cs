@@ -1,4 +1,5 @@
 ﻿using Finance.Management.Service.Accounting.Interfaces;
+using Finance.Management.Service.Authenticating.Interfaces;
 using Finance.Management.Service.Banking.Interfaces;
 using Finance.Management.Service.Operating.Interfaces;
 using Finance.Management.Service.Reporting.Interfaces;
@@ -16,6 +17,8 @@ namespace Finance.Management.Service.Reporting.Implementation
         where TFilterCriteria : IEnumerable<ITrendable>
         where TTransactions : IEnumerable<ITransaction>
     {
+        protected IAccessToken AccessToken { get; }
+
         public string Name => throw new NotImplementedException();
 
         public DateTime Start => throw new NotImplementedException();

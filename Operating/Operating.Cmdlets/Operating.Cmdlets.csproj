@@ -19,4 +19,9 @@
     <PackageReference Include="System.Management.Automation" Version="7.1.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\Authenticating\Authenticating.Interfaces\Authenticating.Interfaces.csproj" />
+    <ProjectReference Include="..\Operating.Interfaces\Operating.Interfaces.csproj" />
+  </ItemGroup>
+
 </Project>

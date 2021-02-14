@@ -16,6 +16,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Authenticating\Authenticating.Interfaces\Authenticating.Interfaces.csproj" />
     <ProjectReference Include="..\..\Reporting\Reporting.Interfaces\Reporting.Interfaces.csproj" />
     <ProjectReference Include="..\Operating.Interfaces\Operating.Interfaces.csproj" />
   </ItemGroup>

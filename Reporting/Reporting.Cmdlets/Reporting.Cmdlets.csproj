@@ -19,4 +19,10 @@
     <PackageReference Include="System.Management.Automation" Version="7.1.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\Accounting\Accounting.Interfaces\Accounting.Interfaces.csproj" />
+    <ProjectReference Include="..\..\Authenticating\Authenticating.Interfaces\Authenticating.Interfaces.csproj" />
+    <ProjectReference Include="..\Reporting.Interfaces\Reporting.Interfaces.csproj" />
+  </ItemGroup>
+
 </Project>
