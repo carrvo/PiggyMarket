@@ -1,4 +1,5 @@
 ﻿using Finance.Management.Service.Accounting.Interfaces;
+using Finance.Management.Service.Authenticating.Interfaces;
 using Finance.Management.Service.Budgeting.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -12,6 +13,8 @@ namespace Finance.Management.Service.Budgeting.Implementation
         where TCategory : ICategory
         where TSubCategory : ISubCategory<TCategory>
     {
+        protected IAccessToken AccessToken { get; }
+
         public TCategory Category => throw new NotImplementedException();
 
         public TSubCategory? SubCategory => throw new NotImplementedException();

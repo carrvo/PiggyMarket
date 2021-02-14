@@ -15,4 +15,8 @@
     <DocumentationFile>..\..\Integration\Configuration\bin\Authenticating.Implementation.xml</DocumentationFile>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Authenticating.Interfaces\Authenticating.Interfaces.csproj" />
+  </ItemGroup>
+
 </Project>

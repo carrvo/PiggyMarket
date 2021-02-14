@@ -1,4 +1,5 @@
 ﻿using Finance.Management.Service.Accounting.Interfaces;
+using Finance.Management.Service.Authenticating.Interfaces;
 using Finance.Management.Service.Banking.Interfaces;
 using Finance.Management.Service.Operating.Interfaces;
 using Finance.Management.Service.Reporting.Interfaces;
@@ -17,13 +18,15 @@ namespace Finance.Management.Service.Operating.Implementation
         where TPymentMethod : IPaymentMethod
         where TTags : IEnumerable<ITag>
     {
+        protected IAccessToken AccessToken { get; }
+
         public string Name { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
-        public string Description => throw new NotImplementedException();
+        public string Description => Name;
 
         public TSubCategory SubCategory { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
-        public ICategory Category => throw new NotImplementedException();
+        public ICategory Category => SubCategory.Category;
 
         public TBankAccount? BankAccount => throw new NotImplementedException();
 

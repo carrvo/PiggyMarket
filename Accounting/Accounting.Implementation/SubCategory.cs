@@ -1,4 +1,5 @@
 ﻿using Finance.Management.Service.Accounting.Interfaces;
+using Finance.Management.Service.Authenticating.Interfaces;
 using Finance.Management.Service.Reporting.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -10,6 +11,8 @@ namespace Finance.Management.Service.Accounting.Implementation
 {
     class SubCategory : ISubCategory<Category>, ITrendable
     {
+        protected IAccessToken AccessToken { get; }
+
         public string Name => throw new NotImplementedException();
 
         public string Description => throw new NotImplementedException();
