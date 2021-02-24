@@ -116,7 +116,7 @@ Describe "Administration of Users and Access" {
     Context "Budgeting" {
         It "create Budget by Category" -Tags "ADM-BUD-01","v0.3.2","Simple" {
             # Requirement
-            New-Budget -AccessToken $token -Category Bills -Target 500 -Currency CanadianDollar -Period Monthly `
+            New-Budget -AccessToken $token -Category "Bills" -Target 500 -Currency CanadianDollar -Period Monthly `
                 | Should -Exist
         }
         It "create Budget by SubCategory" -Tags "ADM-BUD-02","v0.3.3","Moderate" {
@@ -138,7 +138,7 @@ Describe "Administration of Users and Access" {
 		It "modifies Budget" -Tags "ADM-BUD-04","vF","Complex" {
 			# Pre-Requisite
 			New-Budget -AccessToken $token -Category "Bills" -Target 500 -Currency CanadianDollar -Period Monthly
-			
+
 			# Requirement
 			Get-Budget -AccessToken $token -Category "Bills" `
 				| Edit-Budget -Target 125 -Period Weekly
@@ -148,7 +148,7 @@ Describe "Administration of Users and Access" {
 		It "deletes Budget" -Tags "ADM-BUD-05","vF","Moderate" {
 			# Pre-Requisite
 			New-Budget -AccessToken $token -Category "Bills" -Target 500 -Currency CanadianDollar -Period Monthly
-			
+
 			# Requirement
 			Get-Budget -AccessToken $token -Category "Bills" `
 				| Remove-Budget

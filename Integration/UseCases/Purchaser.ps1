@@ -207,7 +207,7 @@ Describe "Ad-hoc use that Generates data and Corrects errors" {
             $transPrice = -20
 
             # Requirement
-            Add-Transaction -AccessToken $token -Name "GAS COMPANY - Bill" -Payee "GasCompany" -SubCategory "GasBills" -Cash -Price $transPrice -Currency CanadianDollar -ReceiptID "GasCompanyReceipt"
+            New-Transaction -AccessToken $token -Name "GAS COMPANY - Bill" -Payee "GasCompany" -SubCategory "GasBills" -Cash -Price $transPrice -Currency CanadianDollar -ReceiptID "GasCompanyReceipt"
             $after = Get-Category -AccessToken $token -Name "Bills" `
                 | Select-Object -ExpandProperty CurrentFunds
             ($after - $before) `
