@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace Finance.Management.Service.Utilities.Cmdlets
 {
+    /// <summary>
+    /// <para type="synopsis">Migrates the application to a new version.</para>
+    /// </summary>
     public sealed class MigrateSchemaVersionCommand : Cmdlet
     {
     }

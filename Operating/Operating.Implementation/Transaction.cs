@@ -18,6 +18,9 @@ namespace Finance.Management.Service.Operating.Implementation
         where TPymentMethod : IPaymentMethod
         where TTags : IEnumerable<ITag>
     {
+        /// <summary>
+        /// Security token to determine access control permissions.
+        /// </summary>
         protected IAccessToken AccessToken { get; }
 
         public string Name { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }

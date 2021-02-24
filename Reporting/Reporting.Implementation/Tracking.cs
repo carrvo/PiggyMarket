@@ -17,6 +17,9 @@ namespace Finance.Management.Service.Reporting.Implementation
         where TFilterCriteria : IEnumerable<ITrendable>
         where TTransactions : IEnumerable<ITransaction>
     {
+        /// <summary>
+        /// Security token to determine access control permissions.
+        /// </summary>
         protected IAccessToken AccessToken { get; }
 
         public string Name => throw new NotImplementedException();

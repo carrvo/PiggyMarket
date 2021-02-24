@@ -10,6 +10,9 @@ using System.Security.Claims;
 
 namespace Finance.Management.Service.Authenticating.Interfaces
 {
+    /// <summary>
+    /// Security token to determine access control permissions.
+    /// </summary>
     public interface IAccessToken
     {
         IAccountContext Context { get; }

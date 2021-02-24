@@ -13,6 +13,9 @@ namespace Finance.Management.Service.Banking.Implementation
 {
     class BankAccount : IBankAccount, ITrendable, IAccountable, IPayee
     {
+        /// <summary>
+        /// Security token to determine access control permissions.
+        /// </summary>
         protected IAccessToken AccessToken { get; }
 
         public string Name => throw new NotImplementedException();

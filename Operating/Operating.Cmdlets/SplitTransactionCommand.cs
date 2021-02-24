@@ -12,9 +12,15 @@ namespace Finance.Management.Service.Operating.Cmdlets
 {
     using ITransaction = ITransaction<ISubCategory<ICategory>, IBankAccount, IPaymentMethod, IEnumerable<ITag>>;
 
+    /// <summary>
+    /// <para type="synopsis">Splits a <see cref="ITransaction"/> into two <see cref="ITransaction"/>s.</para>
+    /// </summary>
     [OutputType(typeof(Nullable))]
     public sealed class SplitTransactionCommand : Cmdlet
     {
+        /// <summary>
+        /// <para type="description">The <see cref="ITransaction"/> to split.</para>
+        /// </summary>
         [Parameter(Mandatory = true, ParameterSetName = "UnCategorized")]
         [Parameter(Mandatory = true, ParameterSetName = "SubCategory")]
         public ITransaction Transaction { get; set; }
