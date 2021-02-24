@@ -80,6 +80,18 @@ Describe "Ad-hoc use that Generates data and Corrects errors" {
             New-Transaction -AccessToken $token -Name "GAS COMPANY - Bill" -Payee "GasCompany" -SubCategory "GasBills" -Debit -Price -200 -Currency CanadianDollar -ReceiptID "GasCompanyReceipt" |
                 Should -Exist
         }
+		It "completes Goal" -Tags "PCH-GOL-01","vF","Simple" {
+            # Pre-Requisite
+            New-Goal -AccessToken $token -Name "Theatre" -Category "Entertainment" -Target 120 -Currency CanadianDollar -PeriodicTarget 10 -Period Monthly |
+
+			# Requirement
+			New-Transaction -AccessToken $token -Name "Watch Theatre" -Payee "TheatreCompany" -Goal "Theatre" -Cash -Price -200 -Currency CanadianDollar -ReceiptID "TheatreReceipt"
+			Get-Goal -AccessToken $token -Name "Theatre" |
+				Select-Object -ExpandProperty Complete |
+				Should -Be $true
+			Get-SubCategory -AccessToken $token -Name "Theatre" |
+				Should -Not -Exist
+		}
     }
 
     Context "viewing Transactions" {

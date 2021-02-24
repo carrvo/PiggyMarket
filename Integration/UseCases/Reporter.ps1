@@ -46,5 +46,17 @@ Describe "Automatically Informs Users" {
             New-Transaction -Payee Care2 -SubCategory "CustomPersonal Care3" -BankAccount NotificationAccount -Price $trans -Currency CanadianDollar -ReceiptID "Care03+$trans"
             Get-Notification | Where-Object Reason -EQ "Above Threshold" | Where-Object Account -EQ "NotificationAccount" | Should -Not -BeNullOrEmpty
         }
+		It "Sends Goal Met Notification" -Tags "RPT-GOL-01" {
+            # Pre-Requisite
+			$target = 120
+            New-Goal -AccessToken $token -Name "Theatre" -Category "Entertainment" -Target $target -Currency CanadianDollar -PeriodicTarget 10 -Period Monthly |
+            $trans = $target
+            New-Transaction -Payee Care2 -SubCategory "Theatre" -Price $trans -Currency CanadianDollar -ReceiptID "Goal+$trans"
+
+			# Requirement
+			Get-Goal -AccessToken $token -Name "Theatre" |
+				Confirm-Goal
+			Get-Notification | Where-Object Reason -EQ "Goal Met" | Should -Not -BeNullOrEmpty
+		}
     }
 }

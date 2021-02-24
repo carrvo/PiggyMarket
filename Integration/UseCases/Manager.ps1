@@ -156,4 +156,64 @@ Describe "Active Influence on and Decisions against the system (ongoing Modifica
 				Should -Not -Exist
 		}
     }
+
+	Context "Goals" {
+		It "create Goal" -Tags "MAN-GOL-01","vF","Simple" {
+            # Requirement
+            New-Goal -AccessToken $token -SubCategory "Theatre" -Category "Entertainment" -Target 120 -Currency CanadianDollar |
+                Should -Exist
+			Get-SubCategory -AccessToken $token -Name "Theatre" |
+				Should -Exist
+			# Requirement - Parameter Alias
+            New-Goal -AccessToken $token -Name "Theatre2" -Category "Entertainment" -Target 120 -Currency CanadianDollar |
+                Should -Exist
+			Get-SubCategory -AccessToken $token -Name "Theatre2" |
+				Should -Exist
+
+			# Rationale
+			<#
+			Using a SubCategory allows for an easy and intuitive way of tracking transactions
+			against the goal. However, it means that the SubCategory should be dedicated to
+			the goal and not used for any other means. These Goal specific SubCategories
+			are to be transient and only last for the duration of the Goal.
+			#>
+		}
+		It "create accrual Goal" -Tags "MAN-GOL-02","vF","Moderate" {
+            # Requirement
+            New-Goal -AccessToken $token -Name "Theatre" -Category "Entertainment" -Target 120 -Currency CanadianDollar -PeriodicTarget 10 -Period Monthly |
+                Should -Exist
+			Get-SubCategory -AccessToken $token -Name "Theatre" |
+				Should -Exist
+		}
+		It "view Goal" -Tags "MAN-GOL-03","vF","Simple" {
+            # Pre-Requisite
+            New-Goal -AccessToken $token -Name "Theatre" -Category "Entertainment" -Target 120 -Currency CanadianDollar -PeriodicTarget 10 -Period Monthly |
+
+			# Requirement
+			Get-Goal -AccessToken $token -SubCategory "Theatre" |
+				Select-Object -ExpandProperty Target |
+				Should -Be 120
+			# Requirement - Parameter Alias
+			Get-Goal -AccessToken $token -Name "Theatre" |
+				Should -Exist
+		}
+		It "abandons Goal" -Tags "MAN-GOL-04","vF","Simple" {
+            # Pre-Requisite
+            New-Goal -AccessToken $token -Name "Theatre" -Category "Entertainment" -Target 120 -Currency CanadianDollar -PeriodicTarget 10 -Period Monthly |
+
+			# Requirement
+			Get-Goal -AccessToken $token -Name "Theatre" |
+				Deny-Goal
+			Get-SubCategory -AccessToken $token -Name "Theatre" |
+				Should -Not -Exist
+		}
+		It "modifies Goal" -Tags "MAN-GOL-05","vF","Complex" {
+            # Pre-Requisite
+            New-Goal -AccessToken $token -Name "Theatre" -Category "Entertainment" -Target 120 -Currency CanadianDollar -PeriodicTarget 10 -Period Monthly |
+
+			# Requirement
+			Get-Goal -AccessToken $token -Name "Theatre" |
+				Edit-Goal -Target 240 -PeriodicTarget 5 -Period Weekly
+		}
+	}
 }
