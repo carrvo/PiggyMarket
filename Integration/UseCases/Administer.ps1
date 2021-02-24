@@ -100,6 +100,17 @@ Describe "Administration of Users and Access" {
                 | Select-Object -ExpandProperty CurrentFunds
                 | Should -Be 0
         }
+		It "deletes SubCategory" -Tags "ADM-CAT-12","vF","Simple" {
+			# Pre-Requisite
+			New-SubCategory -AccessToken $token -Category "Bills" -Name "GasBills"
+			
+			# Requirement
+			Get-SubCategory -AccessToken $token -Name "GasBills" `
+				| Remove-SubCategory
+			Get-SubCategory -AccessToken $token `
+				| Select-Object -ExpandProperty Name `
+				| Should -Not -Contain "GasBills"
+		}
     }
 
     Context "Budgeting" {
@@ -124,6 +135,26 @@ Describe "Administration of Users and Access" {
             New-Budget -AccessToken $token -ItemName "ELECTRIC COMPANY - Bill" -Target 200 -Currency CanadianDollar -Period Monthly `
                 | Should -Exist
         }
+		It "modifies Budget" -Tags "ADM-BUD-04","vF","Complex" {
+			# Pre-Requisite
+			New-Budget -AccessToken $token -Category "Bills" -Target 500 -Currency CanadianDollar -Period Monthly
+			
+			# Requirement
+			Get-Budget -AccessToken $token -Category "Bills" `
+				| Edit-Budget -Target 125 -Period Weekly
+				| Select-Object -ExpandProperty Target
+				| Should -Be 125
+		}
+		It "deletes Budget" -Tags "ADM-BUD-05","vF","Moderate" {
+			# Pre-Requisite
+			New-Budget -AccessToken $token -Category "Bills" -Target 500 -Currency CanadianDollar -Period Monthly
+			
+			# Requirement
+			Get-Budget -AccessToken $token -Category "Bills" `
+				| Remove-Budget
+			Get-Budget -AccessToken $token -Category "Bills" `
+				| Should -Not -Exist
+		}
     }
 
     Context "App Access" -Skip {
