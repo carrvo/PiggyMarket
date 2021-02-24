@@ -100,17 +100,17 @@ Describe "Active Influence on and Decisions against the system (ongoing Modifica
                 Select-Object -ExpandProperty CurrentFunds |
                 Should -Be 0
         }
-		It "deletes SubCategory" -Tags "ADM-CAT-12","vF","Simple" {
-			# Pre-Requisite
-			New-SubCategory -AccessToken $token -Category "Bills" -Name "GasBills"
-			
-			# Requirement
-			Get-SubCategory -AccessToken $token -Name "GasBills" |
-				Remove-SubCategory
-			Get-SubCategory -AccessToken $token |
-				Select-Object -ExpandProperty Name |
-				Should -Not -Contain "GasBills"
-		}
+        It "deletes SubCategory" -Tags "ADM-CAT-12","v0.3.4","Simple" {
+            # Pre-Requisite
+            New-SubCategory -AccessToken $token -Category "Bills" -Name "GasBills"
+
+            # Requirement
+            Get-SubCategory -AccessToken $token -Name "GasBills" |
+                Remove-SubCategory
+            Get-SubCategory -AccessToken $token |
+                Select-Object -ExpandProperty Name |
+                Should -Not -Contain "GasBills"
+        }
     }
 
     Context "Budgeting" {
@@ -135,85 +135,85 @@ Describe "Active Influence on and Decisions against the system (ongoing Modifica
             New-Budget -AccessToken $token -ItemName "ELECTRIC COMPANY - Bill" -Target 200 -Currency CanadianDollar -Period Monthly |
                 Should -Exist
         }
-		It "modifies Budget" -Tags "MAN-BUD-04","vF","Complex" {
-			# Pre-Requisite
-			New-Budget -AccessToken $token -Category "Bills" -Target 500 -Currency CanadianDollar -Period Monthly
+        It "modifies Budget" -Tags "MAN-BUD-04","v0.3.4","Complex" {
+            # Pre-Requisite
+            New-Budget -AccessToken $token -Category "Bills" -Target 500 -Currency CanadianDollar -Period Monthly
 
-			# Requirement
-			Get-Budget -AccessToken $token -Category "Bills" |
-				Edit-Budget -Target 125 -Period Weekly |
-				Select-Object -ExpandProperty Target |
-				Should -Be 125
-		}
-		It "deletes Budget" -Tags "MAN-BUD-05","vF","Moderate" {
-			# Pre-Requisite
-			New-Budget -AccessToken $token -Category "Bills" -Target 500 -Currency CanadianDollar -Period Monthly
+            # Requirement
+            Get-Budget -AccessToken $token -Category "Bills" |
+                Edit-Budget -Target 125 -Period Weekly |
+                Select-Object -ExpandProperty Target |
+                Should -Be 125
+        }
+        It "deletes Budget" -Tags "MAN-BUD-05","v0.3.4","Moderate" {
+            # Pre-Requisite
+            New-Budget -AccessToken $token -Category "Bills" -Target 500 -Currency CanadianDollar -Period Monthly
 
-			# Requirement
-			Get-Budget -AccessToken $token -Category "Bills" |
-				Remove-Budget
-			Get-Budget -AccessToken $token -Category "Bills" |
-				Should -Not -Exist
-		}
+            # Requirement
+            Get-Budget -AccessToken $token -Category "Bills" |
+                Remove-Budget
+            Get-Budget -AccessToken $token -Category "Bills" |
+                Should -Not -Exist
+        }
     }
 
-	Context "Goals" {
-		It "create Goal" -Tags "MAN-GOL-01","vF","Simple" {
+    Context "Goals" {
+        It "create Goal" -Tags "MAN-GOL-01","v1.1.1","Simple" {
             # Requirement
             New-Goal -AccessToken $token -SubCategory "Theatre" -Category "Entertainment" -Target 120 -Currency CanadianDollar |
                 Should -Exist
-			Get-SubCategory -AccessToken $token -Name "Theatre" |
-				Should -Exist
-			# Requirement - Parameter Alias
+            Get-SubCategory -AccessToken $token -Name "Theatre" |
+                Should -Exist
+            # Requirement - Parameter Alias
             New-Goal -AccessToken $token -Name "Theatre2" -Category "Entertainment" -Target 120 -Currency CanadianDollar |
                 Should -Exist
-			Get-SubCategory -AccessToken $token -Name "Theatre2" |
-				Should -Exist
+            Get-SubCategory -AccessToken $token -Name "Theatre2" |
+                Should -Exist
 
-			# Rationale
-			<#
-			Using a SubCategory allows for an easy and intuitive way of tracking transactions
-			against the goal. However, it means that the SubCategory should be dedicated to
-			the goal and not used for any other means. These Goal specific SubCategories
-			are to be transient and only last for the duration of the Goal.
-			#>
-		}
-		It "create accrual Goal" -Tags "MAN-GOL-02","vF","Moderate" {
+            # Rationale
+            <#
+            Using a SubCategory allows for an easy and intuitive way of tracking transactions
+            against the goal. However, it means that the SubCategory should be dedicated to
+            the goal and not used for any other means. These Goal specific SubCategories
+            are to be transient and only last for the duration of the Goal.
+            #>
+        }
+        It "create accrual Goal" -Tags "MAN-GOL-02","v1.1.2","Moderate" {
             # Requirement
             New-Goal -AccessToken $token -Name "Theatre" -Category "Entertainment" -Target 120 -Currency CanadianDollar -PeriodicTarget 10 -Period Monthly |
                 Should -Exist
-			Get-SubCategory -AccessToken $token -Name "Theatre" |
-				Should -Exist
-		}
-		It "view Goal" -Tags "MAN-GOL-03","vF","Simple" {
+            Get-SubCategory -AccessToken $token -Name "Theatre" |
+                Should -Exist
+        }
+        It "view Goal" -Tags "MAN-GOL-03","v1.1.1","Simple" {
             # Pre-Requisite
             New-Goal -AccessToken $token -Name "Theatre" -Category "Entertainment" -Target 120 -Currency CanadianDollar -PeriodicTarget 10 -Period Monthly |
 
-			# Requirement
-			Get-Goal -AccessToken $token -SubCategory "Theatre" |
-				Select-Object -ExpandProperty Target |
-				Should -Be 120
-			# Requirement - Parameter Alias
-			Get-Goal -AccessToken $token -Name "Theatre" |
-				Should -Exist
-		}
-		It "abandons Goal" -Tags "MAN-GOL-04","vF","Simple" {
+            # Requirement
+            Get-Goal -AccessToken $token -SubCategory "Theatre" |
+                Select-Object -ExpandProperty Target |
+                Should -Be 120
+            # Requirement - Parameter Alias
+            Get-Goal -AccessToken $token -Name "Theatre" |
+                Should -Exist
+        }
+        It "abandons Goal" -Tags "MAN-GOL-04","v1.1.2","Simple" {
             # Pre-Requisite
             New-Goal -AccessToken $token -Name "Theatre" -Category "Entertainment" -Target 120 -Currency CanadianDollar -PeriodicTarget 10 -Period Monthly |
 
-			# Requirement
-			Get-Goal -AccessToken $token -Name "Theatre" |
-				Deny-Goal
-			Get-SubCategory -AccessToken $token -Name "Theatre" |
-				Should -Not -Exist
-		}
-		It "modifies Goal" -Tags "MAN-GOL-05","vF","Complex" {
+            # Requirement
+            Get-Goal -AccessToken $token -Name "Theatre" |
+                Deny-Goal
+            Get-SubCategory -AccessToken $token -Name "Theatre" |
+                Should -Not -Exist
+        }
+        It "modifies Goal" -Tags "MAN-GOL-05","v1.1.2","Complex" {
             # Pre-Requisite
             New-Goal -AccessToken $token -Name "Theatre" -Category "Entertainment" -Target 120 -Currency CanadianDollar -PeriodicTarget 10 -Period Monthly |
 
-			# Requirement
-			Get-Goal -AccessToken $token -Name "Theatre" |
-				Edit-Goal -Target 240 -PeriodicTarget 5 -Period Weekly
-		}
-	}
+            # Requirement
+            Get-Goal -AccessToken $token -Name "Theatre" |
+                Edit-Goal -Target 240 -PeriodicTarget 5 -Period Weekly
+        }
+    }
 }
