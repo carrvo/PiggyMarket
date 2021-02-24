@@ -7,6 +7,10 @@ using System.Threading.Tasks;
 
 namespace Finance.Management.Service.Utilities.Cmdlets
 {
+    /// <summary>
+    /// <para type="synopsis">Updates the in-memory object from the authority source.</para>
+    /// <para type="description">This is ONLY a syncing method for refreshing the in-memory object with a new copy.</para>
+    /// </summary>
     public sealed class UpdateMemoryCommand : Cmdlet
     {
     }

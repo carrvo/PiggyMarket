@@ -11,6 +11,9 @@ namespace Finance.Management.Service.Banking.Implementation
 {
     class PaymentMethod : IPaymentMethod, ITrendable
     {
+        /// <summary>
+        /// Security token to determine access control permissions.
+        /// </summary>
         protected IAccessToken AccessToken { get; }
 
         public String Name => Method.ToString();

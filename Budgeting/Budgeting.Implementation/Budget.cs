@@ -13,6 +13,9 @@ namespace Finance.Management.Service.Budgeting.Implementation
         where TCategory : ICategory
         where TSubCategory : ISubCategory<TCategory>
     {
+        /// <summary>
+        /// Security token to determine access control permissions.
+        /// </summary>
         protected IAccessToken AccessToken { get; }
 
         public TCategory Category => throw new NotImplementedException();

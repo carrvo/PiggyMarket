@@ -11,6 +11,9 @@ namespace Finance.Management.Service.Operating.Implementation
 {
     class Payee : IPayee, ITrendable
     {
+        /// <summary>
+        /// Security token to determine access control permissions.
+        /// </summary>
         protected IAccessToken AccessToken { get; }
 
         public string Name => throw new NotImplementedException();

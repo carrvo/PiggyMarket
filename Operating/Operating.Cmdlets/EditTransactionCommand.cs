@@ -12,19 +12,54 @@ namespace Finance.Management.Service.Operating.Cmdlets
 {
     using ITransaction = ITransaction<ISubCategory<ICategory>, IBankAccount, IPaymentMethod, IEnumerable<ITag>>;
 
+    /// <summary>
+    /// <para type="synopsis">Modifies the <see cref="ITransaction"/>.</para>
+    /// </summary>
     [OutputType(typeof(ITransaction))]
     public sealed class EditTransactionCommand : Cmdlet
     {
-        [Parameter(Mandatory = true)]
+        /// <summary>
+        /// <para type="description">The <see cref="ITransaction"/> to edit.</para>
+        /// </summary>
+        [Parameter(Mandatory = true, ParameterSetName = "UnCategorized")]
+        [Parameter(Mandatory = true, ParameterSetName = "SubCategory")]
         public ITransaction Transaction { get; set; }
 
-        [Parameter(Mandatory = false)]
+        /// <summary>
+        /// <para type="description">
+        /// Identifies the <see cref="ITransaction" />
+        /// so that it can be recognized.
+        /// </para>
+        /// </summary>
+        [Parameter(Mandatory = false, ParameterSetName = "UnCategorized")]
+        [Parameter(Mandatory = false, ParameterSetName = "SubCategory")]
         public String Name { get; set; }
 
-        [Parameter(Mandatory = false)]
+        /// <summary>
+        /// <para type="description">No meaning is associated with the <see cref="ITransaction" />.</para>
+        /// </summary>
+        [Parameter(Mandatory = true, ParameterSetName = "UnCategorized")]
+        public SwitchParameter UnCategorized { get; set; }
+
+        /// <summary>
+        /// <para type="description">
+        /// The <see cref="ISubCategpry" /> that gives
+        /// the <see cref="ITransaction" /> meaning.
+        /// </para>
+        /// </summary>
+        [Parameter(Mandatory = false, ParameterSetName = "SubCategory")]
         public ISubCategory<ICategory> SubCategory { get; set; }
 
-        [Parameter(Mandatory = false)]
+        /// <summary>
+        /// <para type="description">Meta-data.</para>
+        /// <para type="description">
+        /// Any additional unstructured information to be
+        /// added to the <see cref="ITransaction" /> for the
+        /// user's benefit.
+        /// </para>
+        /// </summary>
+        [Parameter(Mandatory = false, ParameterSetName = "UnCategorized")]
+        [Parameter(Mandatory = false, ParameterSetName = "SubCategory")]
         public String Comment { get; set; }
     }
 }

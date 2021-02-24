@@ -11,6 +11,9 @@ namespace Finance.Management.Service.Authenticating.Cmdlets
     [OutputType(typeof(IAccountContext))]
     public sealed class NewAccountContextCommand : Cmdlet
     {
+        /// <summary>
+        /// <para type="description">Security token to determine access control permissions.</para>
+        /// </summary>
         [Parameter(Mandatory = true)]
         public IAccessToken AccessToken { get; set; }
 

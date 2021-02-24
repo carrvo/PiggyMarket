@@ -60,6 +60,7 @@ namespace Finance.Management.Service.Operating.Interfaces
         TBanckAccount? BankAccount { get; }
 
         /// <summary>
+        /// <see cref="IPaymentMethod"/> used.
         /// </summary>
         TPaymentMethod PaymentMethod { get; }
 

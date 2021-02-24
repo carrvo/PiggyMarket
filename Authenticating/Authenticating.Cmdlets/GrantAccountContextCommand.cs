@@ -16,6 +16,9 @@ namespace Finance.Management.Service.Authenticating.Cmdlets
         /// </summary>
         const String ValidEmailPattern = "^[-!#$%&'*+/0-9=?A-Z^_a-z{|}~](\\.?[-!#$%&'*+/0-9=?A-Z^_a-z{|}~])*@[a-zA-Z] (-?[a-zA-Z0-9])*(\\.[a-zA-Z] (-?[a-zA-Z0-9])*)+$";
 
+        /// <summary>
+        /// <para type="description">Security token to determine access control permissions.</para>
+        /// </summary>
         [Parameter(Mandatory = true)]
         public IAccessToken AccessToken { get; set; }
 

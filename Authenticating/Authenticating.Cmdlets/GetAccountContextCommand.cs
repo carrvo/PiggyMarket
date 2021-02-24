@@ -10,6 +10,9 @@ namespace Finance.Management.Service.Authenticating.Cmdlets
 {
     public sealed class GetAccountContextCommand : Cmdlet
     {
+        /// <summary>
+        /// <para type="description">Security token to determine access control permissions.</para>
+        /// </summary>
         [Parameter(Mandatory = true, ParameterSetName = "Name")]
         [Parameter(Mandatory = true, ParameterSetName = "Guid")]
         [Parameter(Mandatory = true, ParameterSetName = "Current")]
