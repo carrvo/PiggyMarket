@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 
 namespace Finance.Management.Service.Budgeting.Cmdlets
 {
-    public sealed class UpdateBudgetCommand : Cmdlet
+    [Cmdlet(VerbsData.Edit, "Budget", ConfirmImpact = ConfirmImpact.Medium, RemotingCapability = RemotingCapability.PowerShell, SupportsPaging = false, SupportsShouldProcess = true)]
+    public sealed class EditBudgetCommand : Cmdlet
     {
     }
 }

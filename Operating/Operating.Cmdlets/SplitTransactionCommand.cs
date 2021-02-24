@@ -15,6 +15,7 @@ namespace Finance.Management.Service.Operating.Cmdlets
     /// <summary>
     /// <para type="synopsis">Splits a <see cref="ITransaction"/> into two <see cref="ITransaction"/>s.</para>
     /// </summary>
+    [Cmdlet(VerbsCommon.Split, "Transaction", ConfirmImpact = ConfirmImpact.Medium, DefaultParameterSetName = "SubCategory", RemotingCapability = RemotingCapability.PowerShell, SupportsPaging = false, SupportsShouldProcess = true)]
     [OutputType(typeof(Nullable))]
     public sealed class SplitTransactionCommand : Cmdlet
     {

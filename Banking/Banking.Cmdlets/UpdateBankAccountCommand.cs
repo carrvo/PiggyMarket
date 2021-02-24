@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace Finance.Management.Service.Banking.Cmdlets
 {
+    [Cmdlet(VerbsData.Update, "BankAccount", ConfirmImpact = ConfirmImpact.Medium, RemotingCapability = RemotingCapability.PowerShell, SupportsPaging = false, SupportsShouldProcess = true)]
     public sealed class UpdateBankAccountCommand : Cmdlet
     {
     }

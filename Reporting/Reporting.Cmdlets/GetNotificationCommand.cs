@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 
 namespace Finance.Management.Service.Reporting.Cmdlets
 {
+    [Cmdlet(VerbsCommon.Get, "Notification", ConfirmImpact = ConfirmImpact.Low, RemotingCapability = RemotingCapability.PowerShell, SupportsPaging = true, SupportsShouldProcess = false)]
     public sealed class GetNotificationCommand : Cmdlet
     {
         /// <summary>

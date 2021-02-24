@@ -41,6 +41,7 @@ namespace Finance.Management.Service.Operating.Cmdlets
     /// <see cref="ICategory" /> (for the purposes of <see cref="IBudgeting" />).
     /// </para>
     /// </summary>
+    [Cmdlet(VerbsCommon.New, "Transaction", ConfirmImpact = ConfirmImpact.Low, RemotingCapability = RemotingCapability.PowerShell, SupportsPaging = false, SupportsShouldProcess = true)]
     [OutputType(typeof(ITransaction))]
     public sealed class NewTransactionCommand : Cmdlet
     {
