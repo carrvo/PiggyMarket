@@ -19,6 +19,7 @@ namespace Finance.Management.Service.Operating.Cmdlets
     /// and either the meaning applies or not.
     /// </para>
     /// </summary>
+    [Cmdlet(VerbsCommon.Remove, "Tag", ConfirmImpact = ConfirmImpact.Low, RemotingCapability = RemotingCapability.PowerShell, SupportsPaging = false, SupportsShouldProcess = true)]
     [OutputType(typeof(ITransaction))]
     public sealed class RemoveTagCommand : Cmdlet
     {

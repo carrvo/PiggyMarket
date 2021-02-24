@@ -25,6 +25,7 @@ namespace Finance.Management.Service.Accounting.Cmdlets
     /// aggregation purposes.
     /// </para>
     /// </summary>
+    [Cmdlet(VerbsCommon.Get, "SubCategory", ConfirmImpact = ConfirmImpact.None, RemotingCapability = RemotingCapability.PowerShell, SupportsPaging = true, SupportsShouldProcess = false)]
     [OutputType(typeof(ISubCategory<ICategory>))]
     public sealed class GetSubCategoryCommand : Cmdlet
     {

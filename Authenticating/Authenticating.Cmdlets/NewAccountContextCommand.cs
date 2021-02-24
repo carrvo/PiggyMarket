@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace Finance.Management.Service.Authenticating.Cmdlets
 {
+    [Cmdlet(VerbsCommon.New, "AccountContext", ConfirmImpact = ConfirmImpact.Low, RemotingCapability = RemotingCapability.PowerShell, SupportsPaging = false, SupportsShouldProcess = true)]
     [OutputType(typeof(IAccountContext))]
     public sealed class NewAccountContextCommand : Cmdlet
     {

@@ -16,6 +16,7 @@ namespace Finance.Management.Service.Operating.Cmdlets
     /// <summary>
     /// <para type="synopsis">Searches for the <see cref="ITransaction"/>s.</para>
     /// </summary>
+    [Cmdlet(VerbsCommon.Get, "Transaction", ConfirmImpact = ConfirmImpact.None, DefaultParameterSetName = "All", RemotingCapability = RemotingCapability.PowerShell, SupportsPaging = true, SupportsShouldProcess = false)]
     [OutputType(typeof(ITransaction))]
     public sealed class GetTransactionCommand : Cmdlet
     {

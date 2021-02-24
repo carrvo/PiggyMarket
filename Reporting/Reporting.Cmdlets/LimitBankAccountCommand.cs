@@ -17,6 +17,7 @@ namespace Finance.Management.Service.Reporting.Cmdlets
     /// transfer execess funds to savings or investments.
     /// </para>
     /// </summary>
+    [Cmdlet(VerbsData.Limit, "BankAccount", ConfirmImpact = ConfirmImpact.Low, RemotingCapability = RemotingCapability.PowerShell, SupportsPaging = false, SupportsShouldProcess = false)]
     public sealed class LimitBankAccountCommand : Cmdlet
     {
         /// <summary>

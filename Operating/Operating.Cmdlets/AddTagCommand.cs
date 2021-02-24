@@ -19,6 +19,7 @@ namespace Finance.Management.Service.Operating.Cmdlets
     /// and either the meaning applies or not.
     /// </para>
     /// </summary>
+    [Cmdlet(VerbsCommon.Add, "Tag", ConfirmImpact = ConfirmImpact.Low, RemotingCapability = RemotingCapability.PowerShell, SupportsPaging = false, SupportsShouldProcess = true)]
     [OutputType(typeof(ITransaction))]
     public sealed class AddTagCommand : Cmdlet
     {

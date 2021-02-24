@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace Finance.Management.Service.Banking.Cmdlets
 {
+    [Cmdlet(VerbsCommon.Add, "Transfer", ConfirmImpact = ConfirmImpact.Low, RemotingCapability = RemotingCapability.PowerShell, SupportsPaging = false, SupportsShouldProcess = true)]
     public sealed class AddTransferCommand : Cmdlet
     {
     }

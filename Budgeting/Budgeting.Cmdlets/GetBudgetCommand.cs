@@ -45,6 +45,7 @@ namespace Finance.Management.Service.Budgeting.Cmdlets
     /// affordable for the user.
     /// </para>
     /// </summary>
+    [Cmdlet(VerbsCommon.Get, "Budget", ConfirmImpact = ConfirmImpact.None, DefaultParameterSetName = "Category", RemotingCapability = RemotingCapability.PowerShell, SupportsPaging = true, SupportsShouldProcess = false)]
     [OutputType(typeof(IBudget<ICategory, ISubCategory<ICategory>>))]
     public sealed class GetBudgetCommand : Cmdlet
     {

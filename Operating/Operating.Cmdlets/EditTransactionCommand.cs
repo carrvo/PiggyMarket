@@ -15,6 +15,7 @@ namespace Finance.Management.Service.Operating.Cmdlets
     /// <summary>
     /// <para type="synopsis">Modifies the <see cref="ITransaction"/>.</para>
     /// </summary>
+    [Cmdlet(VerbsData.Edit, "Transaction", ConfirmImpact = ConfirmImpact.Medium, DefaultParameterSetName = "SubCategory", RemotingCapability = RemotingCapability.PowerShell, SupportsPaging = false, SupportsShouldProcess = true)]
     [OutputType(typeof(ITransaction))]
     public sealed class EditTransactionCommand : Cmdlet
     {

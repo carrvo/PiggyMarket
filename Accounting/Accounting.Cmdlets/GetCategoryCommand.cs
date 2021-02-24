@@ -23,6 +23,7 @@ namespace Finance.Management.Service.Accounting.Cmdlets
     /// <see cref="ITransaction" />s that hold the same meaning.
     /// </para>
     /// </summary>
+    [Cmdlet(VerbsCommon.Get, "Category", ConfirmImpact = ConfirmImpact.None, RemotingCapability = RemotingCapability.PowerShell, SupportsPaging = true, SupportsShouldProcess = false)]
     [OutputType(typeof(ICategory))]
     public sealed class GetCategoryCommand : Cmdlet
     {
