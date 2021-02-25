@@ -1,6 +1,23 @@
 # Add yourself to whatever files are appropriate for you to review
 
-# IMPORTANT CODEOWNERS -- ADD YOURS ABOVE
-/CODEOWNERS             carrvo@gmail.com
-/LICENSE                carrvo@gmail.com
-/Integration/UseCases/  carrvo@gmail.com
+###### IMPORTANT CODEOWNERS -- ADD YOURS ABOVE ##################
+/CODEOWNERS										carrvo@gmail.com
+/LICENSE										carrvo@gmail.com
+
+# Requirements
+/Integration/UseCases/							carrvo@gmail.com
+
+# API / Public Contract
+*.Interfaces/									carrvo@gmail.com
+#*.Cmdlets/										carrvo@gmail.com
+/Integration/Configuration/Application.psd1		carrvo@gmail.com
+
+# Design
+/Accounting/README.md							carrvo@gmail.com
+/Authenticating/README.md						carrvo@gmail.com
+/Banking/README.md								carrvo@gmail.com
+/Budgeting/README.md							carrvo@gmail.com
+/Operating/README.md							carrvo@gmail.com
+/Reporting/README.md							carrvo@gmail.com
+/Utilities/README.md							carrvo@gmail.com
+/Integration/README.md							carrvo@gmail.com
