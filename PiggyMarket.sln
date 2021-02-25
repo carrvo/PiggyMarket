@@ -107,7 +107,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Accounting.UnitTests", "Acc
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Utilities", "Utilities", "{3B40169D-42E4-4659-9E8F-F5B96D32318E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utilities.Cmdlets", "Utilities\Utilities.Cmdlets\Utilities.Cmdlets.csproj", "{39DE4108-C09D-4748-BEB1-34D35091137A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Utilities.Cmdlets", "Utilities\Utilities.Cmdlets\Utilities.Cmdlets.csproj", "{39DE4108-C09D-4748-BEB1-34D35091137A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Configuration", "Configuration", "{E11372B6-164A-4615-98B2-9F817A27D656}"
+	ProjectSection(SolutionItems) = preProject
+		Integration\Configuration\Application.psd1 = Integration\Configuration\Application.psd1
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -246,6 +251,7 @@ Global
 		{13B300FB-7E6A-40D1-B69F-4115B99AF960} = {EC36138D-C83B-40CF-8309-6F32D7DBC690}
 		{D8581C21-2773-4850-B511-02F78545393B} = {EC36138D-C83B-40CF-8309-6F32D7DBC690}
 		{39DE4108-C09D-4748-BEB1-34D35091137A} = {3B40169D-42E4-4659-9E8F-F5B96D32318E}
+		{E11372B6-164A-4615-98B2-9F817A27D656} = {C8EEA3B5-4E0D-4DA1-910F-F42DC7811DCE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B868A028-BD57-4B2B-A9B4-02B29A4D5304}
