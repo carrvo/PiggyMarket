@@ -4,17 +4,17 @@ Describe "Ad-hoc use that Generates data and Corrects errors" {
         $token = Grant-AccessToken -All
     }
 
-    It "supports updating in-memory object" -Tags "PCH-BAK-01","v0.0.3","Simple" {
+    It "supports updating in-memory object" -Tag "PCH-BAK-01","v0.0.3","Simple" {
         Get-Category -AccessToken $token -Name "Bills" | Update-Memory
     }
 
     Context "making Transactions" {
-        It "makes cash purchase" -Tags "PCH-TRN-01","v0.1.0","Simple" {
+        It "makes cash purchase" -Tag "PCH-TRN-01","v0.1.0","Simple" {
             # Requirement
             New-Transaction -AccessToken $token -Name "GAS COMPANY - Bill" -Payee "GasCompany" -UnCategorized -Cash -Price -200 -Currency CanadianDollar -NoReceipt |
                 Should -Exist
         }
-        It "makes cash purchase with SubCategory" -Tags "PCH-TRN-02","v0.1.1","Simple" {
+        It "makes cash purchase with SubCategory" -Tag "PCH-TRN-02","v0.1.1","Simple" {
             # Pre-Requisite
             New-SubCategory -AccessToken $token -Category "Bills" -Name "GasBills"
 
@@ -22,7 +22,7 @@ Describe "Ad-hoc use that Generates data and Corrects errors" {
             New-Transaction -AccessToken $token -Name "GAS COMPANY - Bill" -Payee "GasCompany" -SubCategory "GasBills" -Cash -Price -200 -Currency CanadianDollar -NoReceipt |
                 Should -Exist
         }
-        It "makes cash purchase with Receipt" -Tags "PCH-TRN-02","v0.1.2","Simple" {
+        It "makes cash purchase with Receipt" -Tag "PCH-TRN-02","v0.1.2","Simple" {
             # Pre-Requisite
             New-SubCategory -AccessToken $token -Category "Bills" -Name "GasBills"
 
@@ -30,7 +30,7 @@ Describe "Ad-hoc use that Generates data and Corrects errors" {
             New-Transaction -AccessToken $token -Name "GAS COMPANY - Bill" -Payee "GasCompany" -SubCategory "GasBills" -Cash -Price -200 -Currency CanadianDollar -ReceiptID "GasCompanyReceipt" |
                 Should -Exist
         }
-        It "makes cash purchase with Tag" -Tags "PCH-TRN-03","v0.1.2","Moderate" {
+        It "makes cash purchase with Tag" -Tag "PCH-TRN-03","v0.1.2","Moderate" {
             # Pre-Requisite
             New-SubCategory -AccessToken $token -Category "Bills" -Name "GasBills"
 
@@ -38,7 +38,7 @@ Describe "Ad-hoc use that Generates data and Corrects errors" {
             New-Transaction -AccessToken $token -Name "GAS COMPANY - Bill" -Payee "GasCompany" -SubCategory "GasBills" -Cash -Price -200 -Currency CanadianDollar -ReceiptID "GasCompanyReceipt" -Tags "Refundable" |
                 Should -Exist
         }
-        It "makes cash purchase with Comment" -Tags "PCH-TRN-04","v0.1.2","Moderate" {
+        It "makes cash purchase with Comment" -Tag "PCH-TRN-04","v0.1.2","Moderate" {
             # Pre-Requisite
             New-SubCategory -AccessToken $token -Category "Bills" -Name "GasBills"
 
@@ -46,7 +46,7 @@ Describe "Ad-hoc use that Generates data and Corrects errors" {
             New-Transaction -AccessToken $token -Name "GAS COMPANY - Bill" -Payee "GasCompany" -SubCategory "GasBills" -Cash -Price -200 -Currency CanadianDollar -ReceiptID "GasCompanyReceipt" -Comment "Paid in full." |
                 Should -Exist
         }
-        It "makes cash purchase, adjusted date" -Tags "PCH-TRN-05","v0.1.3","Complex" {
+        It "makes cash purchase, adjusted date" -Tag "PCH-TRN-05","v0.1.3","Complex" {
             # Pre-Requisite
             New-SubCategory -AccessToken $token -Category "Bills" -Name "GasBills"
             $yesterday = Get-Date |
@@ -56,7 +56,7 @@ Describe "Ad-hoc use that Generates data and Corrects errors" {
             New-Transaction -AccessToken $token -Name "GAS COMPANY - Bill" -Payee "GasCompany" -SubCategory "GasBills" -Cash -Price -200 -Currency CanadianDollar -ReceiptID "GasCompanyReceipt" -Posted $yesterday |
                 Should -Exist
         }
-        It "supports cheque purchases" -Tags "PCH-TRN-06","v0.1.0","Simple" {
+        It "supports cheque purchases" -Tag "PCH-TRN-06","v0.1.0","Simple" {
             # Pre-Requisite
             New-SubCategory -AccessToken $token -Category "Bills" -Name "GasBills"
 
@@ -64,7 +64,7 @@ Describe "Ad-hoc use that Generates data and Corrects errors" {
             New-Transaction -AccessToken $token -Name "GAS COMPANY - Bill" -Payee "GasCompany" -SubCategory "GasBills" -Cheque -Price -200 -Currency CanadianDollar -ReceiptID "GasCompanyReceipt" |
                 Should -Exist
         }
-        It "supports credit purchases" -Tags "PCH-TRN-07","v0.1.0","Simple" {
+        It "supports credit purchases" -Tag "PCH-TRN-07","v0.1.0","Simple" {
             # Pre-Requisite
             New-SubCategory -AccessToken $token -Category "Bills" -Name "GasBills"
 
@@ -72,7 +72,7 @@ Describe "Ad-hoc use that Generates data and Corrects errors" {
             New-Transaction -AccessToken $token -Name "GAS COMPANY - Bill" -Payee "GasCompany" -SubCategory "GasBills" -Credit -Price -200 -Currency CanadianDollar -ReceiptID "GasCompanyReceipt" |
                 Should -Exist
         }
-        It "supports debit purchases" -Tags "PCH-TRN-08","v0.1.0","Simple" {
+        It "supports debit purchases" -Tag "PCH-TRN-08","v0.1.0","Simple" {
             # Pre-Requisite
             New-SubCategory -AccessToken $token -Category "Bills" -Name "GasBills"
 
@@ -80,7 +80,7 @@ Describe "Ad-hoc use that Generates data and Corrects errors" {
             New-Transaction -AccessToken $token -Name "GAS COMPANY - Bill" -Payee "GasCompany" -SubCategory "GasBills" -Debit -Price -200 -Currency CanadianDollar -ReceiptID "GasCompanyReceipt" |
                 Should -Exist
         }
-        It "move funds to Goal" -Tags "PCH-GOL-01","v1.1.1","Simple" {
+        It "move funds to Goal" -Tag "PCH-GOL-01","v1.1.1","Simple" {
             # Pre-Requisite
             New-Goal -AccessToken $token -Name "Theatre" -Category "Entertainment" -Target 120 -Currency CanadianDollar -PeriodicTarget 10 -Period Monthly
 
@@ -93,7 +93,7 @@ Describe "Ad-hoc use that Generates data and Corrects errors" {
             Movement is not truly a transaction or a transfer, but the system will treat it as a transaction.
             #>
         }
-        It "completes Goal" -Tags "PCH-GOL-02","v1.1.1","Moderate" {
+        It "completes Goal" -Tag "PCH-GOL-02","v1.1.1","Moderate" {
             # Pre-Requisite
             New-Goal -AccessToken $token -Name "Theatre" -Category "Entertainment" -Target 120 -Currency CanadianDollar -PeriodicTarget 10 -Period Monthly
             Add-ToGoal -AccessToken $token -Name "Save for Theatre" -Goal "Theatre" -Cash -Price -120 -Currency CanadianDollar -ReceiptID "TheatreSavingsReceipt"
@@ -111,7 +111,7 @@ Describe "Ad-hoc use that Generates data and Corrects errors" {
     }
 
     Context "viewing Transactions" {
-        It "views Transactions by Name" -Tags "PCH-VEW-01","v0.1.0","Simple" {
+        It "views Transactions by Name" -Tag "PCH-VEW-01","v0.1.0","Simple" {
             # Pre-Requisite
             New-Transaction -AccessToken $token -Name "GAS COMPANY - Bill" -Payee "GasCompany" -UnCategorized -Cash -Price -200 -Currency CanadianDollar -ReceiptID "GasCompanyReceipt"
 
@@ -122,7 +122,7 @@ Describe "Ad-hoc use that Generates data and Corrects errors" {
     }
 
     Context "modifying Transations" {
-        It "modifies Name" -Tags "PCH-MOD-01","v0.1.0","Simple" {
+        It "modifies Name" -Tag "PCH-MOD-01","v0.1.0","Simple" {
             # Pre-Requisite
             New-SubCategory -AccessToken $token -Category "Bills" -Name "GasBills"
             New-Transaction -AccessToken $token -Name "GAS COMPANY - Bill" -Payee "GasCompany" -SubCategory "GasBills" -Cash -Price -200 -Currency CanadianDollar -ReceiptID "GasCompanyReceipt"
@@ -133,7 +133,7 @@ Describe "Ad-hoc use that Generates data and Corrects errors" {
                 Select-Object -ExpandProperty Name |
                 Should -Be "Electric Bill"
         }
-        It "modifies SubCategory" -Tags "PCH-MOD-02","v0.1.1","Simple" {
+        It "modifies SubCategory" -Tag "PCH-MOD-02","v0.1.1","Simple" {
             # Pre-Requisite
             New-SubCategory -AccessToken $token -Category "Bills" -Name "GasBills"
             New-SubCategory -AccessToken $token -Category "Bills" -Name "ElectricBills"
@@ -145,7 +145,7 @@ Describe "Ad-hoc use that Generates data and Corrects errors" {
                 Select-Object -ExpandProperty SubCategory |
                 Should -Be "ElectricBills"
         }
-        It "adds Tags" -Tags "PCH-MOD-03","v0.1.2","Moderate" {
+        It "adds Tags" -Tag "PCH-MOD-03","v0.1.2","Moderate" {
             # Pre-Requisite
             New-SubCategory -AccessToken $token -Category "Bills" -Name "GasBills"
             New-Transaction -AccessToken $token -Name "GAS COMPANY - Bill" -Payee "GasCompany" -SubCategory "GasBills" -Cash -Price -200 -Currency CanadianDollar -ReceiptID "GasCompanyReceipt"
@@ -156,7 +156,7 @@ Describe "Ad-hoc use that Generates data and Corrects errors" {
                 Select-Object -ExpandProperty Tags |
                 Should -Contain "Refundable"
         }
-        It "removes Tags" -Tags "PCH-MOD-04","v0.1.2","Moderate" {
+        It "removes Tags" -Tag "PCH-MOD-04","v0.1.2","Moderate" {
             # Pre-Requisite
             New-SubCategory -AccessToken $token -Category "Bills" -Name "GasBills"
             New-Transaction -AccessToken $token -Name "GAS COMPANY - Bill" -Payee "GasCompany" -SubCategory "GasBills" -Cash -Price -200 -Currency CanadianDollar -ReceiptID "GasCompanyReceipt" -Tags "Refundable"
@@ -167,7 +167,7 @@ Describe "Ad-hoc use that Generates data and Corrects errors" {
                 Select-Object -ExpandProperty Tags |
                 Should -Not -Contain "Refundable"
         }
-        It "modifies Comments" -Tags "PCH-MOD-05","v0.1.2","Moderate" {
+        It "modifies Comments" -Tag "PCH-MOD-05","v0.1.2","Moderate" {
             # Pre-Requisite
             New-SubCategory -AccessToken $token -Category "Bills" -Name "GasBills"
             New-Transaction -AccessToken $token -Name "GAS COMPANY - Bill" -Payee "GasCompany" -SubCategory "GasBills" -Cash -Price -200 -Currency CanadianDollar -ReceiptID "GasCompanyReceipt"
@@ -178,7 +178,7 @@ Describe "Ad-hoc use that Generates data and Corrects errors" {
                 Select-Object -ExpandProperty Comment |
                 Should -Be "Paid in full."
         }
-        It "Splits Transaction" -Tags "PCH-MOD-06","v0.2.0","Complex" {
+        It "Splits Transaction" -Tag "PCH-MOD-06","v0.2.0","Complex" {
             # Pre-Requisite
             New-SubCategory -AccessToken $token -Category "Bills" -Name "GasBills"
             New-Transaction -AccessToken $token -Name "GAS COMPANY - Bill" -Payee "GasCompany" -SubCategory "GasBills" -Cash -Price -200 -Currency CanadianDollar -ReceiptID "GasCompanyReceipt"
@@ -189,7 +189,7 @@ Describe "Ad-hoc use that Generates data and Corrects errors" {
             Get-Transaction -AccessToken $token |
                 Should -HaveCount 2
         }
-        It "Splits Transaction with SubCategory" -Tags "PCH-MOD-07","v0.2.0","Complex" {
+        It "Splits Transaction with SubCategory" -Tag "PCH-MOD-07","v0.2.0","Complex" {
             # Pre-Requisite
             New-SubCategory -AccessToken $token -Category "Bills" -Name "GasBills"
             New-Transaction -AccessToken $token -Name "GAS COMPANY - Bill" -Payee "GasCompany" -SubCategory "GasBills" -Cash -Price -200 -Currency CanadianDollar -ReceiptID "GasCompanyReceipt"
@@ -200,7 +200,7 @@ Describe "Ad-hoc use that Generates data and Corrects errors" {
             Get-Transaction -AccessToken $token |
                 Should -HaveCount 2
         }
-        It "Splits Transaction with Tags" -Tags "PCH-MOD-08","v0.2.1","Complex" {
+        It "Splits Transaction with Tags" -Tag "PCH-MOD-08","v0.2.1","Complex" {
             # Pre-Requisite
             New-SubCategory -AccessToken $token -Category "Bills" -Name "GasBills"
             New-Transaction -AccessToken $token -Name "GAS COMPANY - Bill" -Payee "GasCompany" -SubCategory "GasBills" -Cash -Price -200 -Currency CanadianDollar -ReceiptID "GasCompanyReceipt"
@@ -211,7 +211,7 @@ Describe "Ad-hoc use that Generates data and Corrects errors" {
             Get-Transaction -AccessToken $token |
                 Should -HaveCount 2
         }
-        It "Splits Transaction with Comment" -Tags "PCH-MOD-09","v0.2.1","Complex" {
+        It "Splits Transaction with Comment" -Tag "PCH-MOD-09","v0.2.1","Complex" {
             # Pre-Requisite
             New-SubCategory -AccessToken $token -Category "Bills" -Name "GasBills"
             New-Transaction -AccessToken $token -Name "GAS COMPANY - Bill" -Payee "GasCompany" -SubCategory "GasBills" -Cash -Price -200 -Currency CanadianDollar -ReceiptID "GasCompanyReceipt"
@@ -225,7 +225,7 @@ Describe "Ad-hoc use that Generates data and Corrects errors" {
     }
 
     Context "other Day-To-Day Operations" {
-        It "spends from Category" -Tags "PCH-DOP-01","v0.3.2","Simple" {
+        It "spends from Category" -Tag "PCH-DOP-01","v0.3.2","Simple" {
             # Pre-Requisite
             New-SubCategory -AccessToken $token -Category "Bills" -Name "GasBills"
             New-Budget -AccessToken $token -Category "Bills" -Target 300 -Currency CanadianDollar -Period Monthly
@@ -248,7 +248,7 @@ Describe "Ad-hoc use that Generates data and Corrects errors" {
             . $PSScriptRoot\BankMoq.ps1
         }
 
-        It "supports Bank Account purchases" -Tags "PCH-BNK-01","vB.1.0","Moderate" {
+        It "supports Bank Account purchases" -Tag "PCH-BNK-01","vB.1.0","Moderate" {
             # Pre-Requisite
             Add-BankAccount -AccessToken $token -Name "MyAccount" -Bank "MyBank" -Number 1234567 -Currency CanadianDollar
             New-SubCategory -AccessToken $token -Category "Bills" -Name "GasBills"
@@ -257,7 +257,7 @@ Describe "Ad-hoc use that Generates data and Corrects errors" {
             New-Transaction -AccessToken $token -Name "GAS COMPANY - Bill" -Payee "GasCompany" -SubCategory "GasBills" -Debit -Account "MyAccount" -Price -200 -Currency CanadianDollar -ReceiptID "GasCompanyReceipt" |
                 Should -Exist
         }
-        It "supports Transfers Between Accounts" -Tags "PCH-BNK-02","vB.1.1","Complex" {
+        It "supports Transfers Between Accounts" -Tag "PCH-BNK-02","vB.1.1","Complex" {
             # Pre-Requisite
             $amount = 500
             Add-BankAccount -AccessToken $token -Name "MyAccount" -Bank "MyBank" -Number 1234567 -Currency CanadianDollar

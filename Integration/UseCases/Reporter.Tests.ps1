@@ -5,7 +5,7 @@ Describe "Automatically Informs Users" {
     }
 
     Describe "Notifications" {
-        It "Sends Overbudget Notification" -Tags "RPT-NFY-01","v0.5.0","Moderate" {
+        It "Sends Overbudget Notification" -Tag "RPT-NFY-01","v0.5.0","Moderate" {
             # Pre-Requisite
             $target = 20
             $budget = New-Budget -SubCategory CustomEntertainment2 -Target $target -Currency CanadianDollar -Period Monthly
@@ -16,7 +16,7 @@ Describe "Automatically Informs Users" {
             # Requirement
             Get-Notification | Where-Object Reason -EQ "Over Budget" | Where-Object Category -EQ Entertainment | Should -Not -BeNullOrEmpty
         }
-        It "Sends Budget Met Notification" -Tags "RPT-NFY-02","v0.5.0","Moderate" {
+        It "Sends Budget Met Notification" -Tag "RPT-NFY-02","v0.5.0","Moderate" {
             # Pre-Requisite
             $target = 20
             $budget = New-Budget -SubCategory CustomBills2 -Target $target -Currency CanadianDollar -Period Monthly
@@ -27,7 +27,7 @@ Describe "Automatically Informs Users" {
             # Requirement
             Get-Notification | Where-Object Reason -EQ "At Budget" | Where-Object Category -EQ Bills | Should -Not -BeNullOrEmpty
         }
-        It "Sends Bounced Notification" -Tags "RPT-NFY-03","vB.3.0","Complex" {
+        It "Sends Bounced Notification" -Tag "RPT-NFY-03","vB.3.0","Complex" {
             # Pre-Requisite
             Add-BankAccount -Name "PoorAccount" -BankName "MyBank" -Number 1234569 -Currency CanadianDollar
             New-Transaction -Payee Bill02 -SubCategory CustomBills2 -BankAccount PoorAccount -Price -10 -Currency CanadianDollar -ReceiptID "Bill02-Poor"
@@ -35,7 +35,7 @@ Describe "Automatically Informs Users" {
             # Requirement
             Get-Notification | Where-Object Reason -EQ "Bounced" | Should -Not -BeNullOrEmpty
         }
-        It "Sends Below Threshold Notification" -Tags "RPT-NFY-04","v0.5.1","Complex" {
+        It "Sends Below Threshold Notification" -Tag "RPT-NFY-04","v0.5.1","Complex" {
             # Pre-Requisite
             $target = 100
             $budget = New-Budget -SubCategory "CustomPersonal Care2" -Target $target -Currency CanadianDollar -Period Monthly
@@ -46,7 +46,7 @@ Describe "Automatically Informs Users" {
             # Requirement
             Get-Notification | Where-Object Reason -EQ "Below Threshold" | Where-Object Category -EQ "Personal Care" | Should -Not -BeNullOrEmpty
         }
-        It "Sends Below Threshold Notification for BankAccount" -Tags "RPT-BNK-01","vB.5.1","Complex" {
+        It "Sends Below Threshold Notification for BankAccount" -Tag "RPT-BNK-01","vB.5.1","Complex" {
             # Pre-Requisite
             Add-BankAccount -Name "NotificationAccount" -BankName "MyBank" -Number 1234560 -Currency CanadianDollar
             Limit-BankAccount -Name "NotificationAccount" -Above 6
@@ -58,7 +58,7 @@ Describe "Automatically Informs Users" {
             # Requirement
             Get-Notification | Where-Object Reason -EQ "Below Threshold" | Where-Object Account -EQ "NotificationAccount" | Should -Not -BeNullOrEmpty
         }
-        It "Sends Above Threshold Notification" -Tags "RPT-BNK-02","vB.5.1","Complex" {
+        It "Sends Above Threshold Notification" -Tag "RPT-BNK-02","vB.5.1","Complex" {
             # Pre-Requisite
             Add-BankAccount -Name "NotificationAccount" -BankName "MyBank" -Number 1234560 -Currency CanadianDollar
             $target = Get-BankAccount NotificationAccount | ForEach-Object CurrentFunds
@@ -70,7 +70,7 @@ Describe "Automatically Informs Users" {
             # Requirement
             Get-Notification | Where-Object Reason -EQ "Above Threshold" | Where-Object Account -EQ "NotificationAccount" | Should -Not -BeNullOrEmpty
         }
-        It "Sends Goal Met Notification" -Tags "RPT-GOL-01","v1.1.2","Complex" {
+        It "Sends Goal Met Notification" -Tag "RPT-GOL-01","v1.1.2","Complex" {
             # Pre-Requisite
             $target = 120
             New-Goal -AccessToken $token -Name "Theatre" -Category "Entertainment" -Target $target -Currency CanadianDollar -PeriodicTarget 10 -Period Monthly |

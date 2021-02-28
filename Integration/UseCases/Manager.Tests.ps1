@@ -5,12 +5,12 @@ Describe "Active Influence on and Decisions against the system (ongoing Modifica
     }
 
     Context "Categories" {
-        It "view Category" -Tags "ADM-CAT-01","v0.1.1","Simple" {
+        It "view Category" -Tag "ADM-CAT-01","v0.1.1","Simple" {
             # Requirement
             Get-Category -AccessToken $token -Name "Bills" |
                 Should -Exist
         }
-        It "view all Categories" -Tags "ADM-CAT-02","v0.1.1","Simple" {
+        It "view all Categories" -Tag "ADM-CAT-02","v0.1.1","Simple" {
             # Requirement
             Get-Category -AccessToken $token |
                 Should -BeLessOrEqual 15
@@ -26,12 +26,12 @@ Describe "Active Influence on and Decisions against the system (ongoing Modifica
             allowing it to remain high-level.
             #>
         }
-        It "create SubCategory" -Tags "ADM-CAT-03","v0.1.1","Simple" {
+        It "create SubCategory" -Tag "ADM-CAT-03","v0.1.1","Simple" {
             # Requirement
             New-SubCategory -AccessToken $token -Category "Bills" -Name "GasBills" |
                 Should -Exist
         }
-        It "view SubCategory" -Tags "ADM-CAT-04","v0.1.1","Simple" {
+        It "view SubCategory" -Tag "ADM-CAT-04","v0.1.1","Simple" {
             # Pre-Requisite
             New-SubCategory -AccessToken $token -Category "Bills" -Name "GasBills"
 
@@ -39,7 +39,7 @@ Describe "Active Influence on and Decisions against the system (ongoing Modifica
             Get-SubCategory -AccessToken $token -Name "GasBills" |
                 Should -Exist
         }
-        It "view Category that SubCategory belongs to" -Tags "ADM-CAT-05","v0.1.1","Moderate" {
+        It "view Category that SubCategory belongs to" -Tag "ADM-CAT-05","v0.1.1","Moderate" {
             # Pre-Requisite
             New-SubCategory -AccessToken $token -Category "Bills" -Name "GasBills"
 
@@ -49,7 +49,7 @@ Describe "Active Influence on and Decisions against the system (ongoing Modifica
                 Select-Object -ExpandProperty Name |
                 Should -Be "Bills"
         }
-        It "multiple SubCategories have same name" -Tags "ADM-CAT-06","v0.1.1","Moderate" {
+        It "multiple SubCategories have same name" -Tag "ADM-CAT-06","v0.1.1","Moderate" {
             # Requirement
             New-SubCategory -AccessToken $token -Category "Bills" -Name "Subscription"
             New-SubCategory -AccessToken $token -Category "Entertainment" -Name "Subscription"
@@ -57,7 +57,7 @@ Describe "Active Influence on and Decisions against the system (ongoing Modifica
             Get-SubCategory -AccessToken $token -Name "Subscription" |
                 Should -HaveCount 2
         }
-        It "view SubCategories by Category" -Tags "ADM-CAT-07","v0.1.1","Simple" {
+        It "view SubCategories by Category" -Tag "ADM-CAT-07","v0.1.1","Simple" {
             # Pre-Requisite
             New-SubCategory -AccessToken $token -Category "Bills" -Name "GasBills"
             New-SubCategory -AccessToken $token -Category "Bills" -Name "ElectricBills"
@@ -67,7 +67,7 @@ Describe "Active Influence on and Decisions against the system (ongoing Modifica
             Get-SubCategory -AccessToken $token -Category "Bills" |
                 Should -HaveCount 2
         }
-        It "view all SubCategories" -Tags "ADM-CAT-08","v0.1.1","Simple" {
+        It "view all SubCategories" -Tag "ADM-CAT-08","v0.1.1","Simple" {
             # Pre-Requisite
             New-SubCategory -AccessToken $token -Category "Bills" -Name "GasBills"
             New-SubCategory -AccessToken $token -Category "Bills" -Name "ElectricBills"
@@ -77,20 +77,20 @@ Describe "Active Influence on and Decisions against the system (ongoing Modifica
             Get-SubCategory -AccessToken $token |
                 Should -HaveCount 3
         }
-        It "view remaining Funds" -Tags "ADM-CAT-09","v0.3.0","Moderate" {
+        It "view remaining Funds" -Tag "ADM-CAT-09","v0.3.0","Moderate" {
             # Requirement
             Get-Category -AccessToken $token -Name "Bills" |
                 Select-Object -ExpandProperty CurrentFunds |
                 Should -Be 0
         }
-        It "view total remaining Funds" -Tags "ADM-CAT-10","v0.3.0","Complex" {
+        It "view total remaining Funds" -Tag "ADM-CAT-10","v0.3.0","Complex" {
             # Requirement
             Get-Category -AccessToken $token |
                 Measure-Object CurrentFunds -Sum |
                 Select-Object -ExpandProperty Sum |
                 Should -Be 0
         }
-        It "view remaining Funds from SubCategory" -Tags "ADM-CAT-11","v0.3.1","Complex" {
+        It "view remaining Funds from SubCategory" -Tag "ADM-CAT-11","v0.3.1","Complex" {
             # Pre-Requisite
             New-SubCategory -AccessToken $token -Category "Bills" -Name "GasBills"
 
@@ -100,7 +100,7 @@ Describe "Active Influence on and Decisions against the system (ongoing Modifica
                 Select-Object -ExpandProperty CurrentFunds |
                 Should -Be 0
         }
-        It "deletes SubCategory" -Tags "ADM-CAT-12","v0.3.4","Simple" {
+        It "deletes SubCategory" -Tag "ADM-CAT-12","v0.3.4","Simple" {
             # Pre-Requisite
             New-SubCategory -AccessToken $token -Category "Bills" -Name "GasBills"
 
@@ -114,12 +114,12 @@ Describe "Active Influence on and Decisions against the system (ongoing Modifica
     }
 
     Context "Budgeting" {
-        It "create Budget by Category" -Tags "MAN-BUD-01","v0.3.2","Simple" {
+        It "create Budget by Category" -Tag "MAN-BUD-01","v0.3.2","Simple" {
             # Requirement
             New-Budget -AccessToken $token -Category "Bills" -Target 500 -Currency CanadianDollar -Period Monthly |
                 Should -Exist
         }
-        It "create Budget by SubCategory" -Tags "MAN-BUD-02","v0.3.3","Moderate" {
+        It "create Budget by SubCategory" -Tag "MAN-BUD-02","v0.3.3","Moderate" {
             # Pre-Requisite
             New-SubCategory -AccessToken $token -Category "Bills" -Name "GasBills"
 
@@ -127,7 +127,7 @@ Describe "Active Influence on and Decisions against the system (ongoing Modifica
             New-Budget -AccessToken $token -SubCategory "GasBills" -Target 200 -Currency CanadianDollar -Period Monthly |
                 Should -Exist
         }
-        It "create Budget by Transaction name" -Tags "MAN-BUD-03","v0.3.3","Complex" {
+        It "create Budget by Transaction name" -Tag "MAN-BUD-03","v0.3.3","Complex" {
             # Requirement
             New-Budget -AccessToken $token -TransactionName "GAS COMPANY - Bill" -Target 200 -Currency CanadianDollar -Period Monthly |
                 Should -Exist
@@ -135,7 +135,7 @@ Describe "Active Influence on and Decisions against the system (ongoing Modifica
             New-Budget -AccessToken $token -ItemName "ELECTRIC COMPANY - Bill" -Target 200 -Currency CanadianDollar -Period Monthly |
                 Should -Exist
         }
-        It "modifies Budget" -Tags "MAN-BUD-04","v0.3.4","Complex" {
+        It "modifies Budget" -Tag "MAN-BUD-04","v0.3.4","Complex" {
             # Pre-Requisite
             New-Budget -AccessToken $token -Category "Bills" -Target 500 -Currency CanadianDollar -Period Monthly
 
@@ -145,7 +145,7 @@ Describe "Active Influence on and Decisions against the system (ongoing Modifica
                 Select-Object -ExpandProperty Target |
                 Should -Be 125
         }
-        It "deletes Budget" -Tags "MAN-BUD-05","v0.3.4","Moderate" {
+        It "deletes Budget" -Tag "MAN-BUD-05","v0.3.4","Moderate" {
             # Pre-Requisite
             New-Budget -AccessToken $token -Category "Bills" -Target 500 -Currency CanadianDollar -Period Monthly
 
@@ -158,7 +158,7 @@ Describe "Active Influence on and Decisions against the system (ongoing Modifica
     }
 
     Context "Goals" {
-        It "create Goal" -Tags "MAN-GOL-01","v1.1.1","Simple" {
+        It "create Goal" -Tag "MAN-GOL-01","v1.1.1","Simple" {
             # Requirement
             New-Goal -AccessToken $token -SubCategory "Theatre" -Category "Entertainment" -Target 120 -Currency CanadianDollar |
                 Should -Exist
@@ -178,14 +178,14 @@ Describe "Active Influence on and Decisions against the system (ongoing Modifica
             are to be transient and only last for the duration of the Goal.
             #>
         }
-        It "create accrual Goal" -Tags "MAN-GOL-02","v1.1.2","Moderate" {
+        It "create accrual Goal" -Tag "MAN-GOL-02","v1.1.2","Moderate" {
             # Requirement
             New-Goal -AccessToken $token -Name "Theatre" -Category "Entertainment" -Target 120 -Currency CanadianDollar -PeriodicTarget 10 -Period Monthly |
                 Should -Exist
             Get-SubCategory -AccessToken $token -Name "Theatre" |
                 Should -Exist
         }
-        It "view Goal" -Tags "MAN-GOL-03","v1.1.1","Simple" {
+        It "view Goal" -Tag "MAN-GOL-03","v1.1.1","Simple" {
             # Pre-Requisite
             New-Goal -AccessToken $token -Name "Theatre" -Category "Entertainment" -Target 120 -Currency CanadianDollar -PeriodicTarget 10 -Period Monthly |
 
@@ -197,7 +197,7 @@ Describe "Active Influence on and Decisions against the system (ongoing Modifica
             Get-Goal -AccessToken $token -Name "Theatre" |
                 Should -Exist
         }
-        It "abandons Goal" -Tags "MAN-GOL-04","v1.1.2","Simple" {
+        It "abandons Goal" -Tag "MAN-GOL-04","v1.1.2","Simple" {
             # Pre-Requisite
             New-Goal -AccessToken $token -Name "Theatre" -Category "Entertainment" -Target 120 -Currency CanadianDollar -PeriodicTarget 10 -Period Monthly |
 
@@ -207,7 +207,7 @@ Describe "Active Influence on and Decisions against the system (ongoing Modifica
             Get-SubCategory -AccessToken $token -Name "Theatre" |
                 Should -Not -Exist
         }
-        It "modifies Goal" -Tags "MAN-GOL-05","v1.1.2","Complex" {
+        It "modifies Goal" -Tag "MAN-GOL-05","v1.1.2","Complex" {
             # Pre-Requisite
             New-Goal -AccessToken $token -Name "Theatre" -Category "Entertainment" -Target 120 -Currency CanadianDollar -PeriodicTarget 10 -Period Monthly |
 

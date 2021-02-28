@@ -5,7 +5,7 @@ Describe "Administration of Users and Access" {
     }
 
     Context "App Access" -Skip {
-        It "invite other Users to share Access with" -Tags "ADM-ACC-01","v0.4.0","Complex" {
+        It "invite other Users to share Access with" -Tag "ADM-ACC-01","v0.4.0","Complex" {
             # Requirement
             Grant-AccountContext -Email "partner@someaddress.com"
 
@@ -16,7 +16,7 @@ Describe "Administration of Users and Access" {
             users to budget together under a single context.
             #>
         }
-        It "identify what Accessing" -Tags "ADM-ACC-02","v0.4.1","Moderate" {
+        It "identify what Accessing" -Tag "ADM-ACC-02","v0.4.1","Moderate" {
             # Requirement
             Get-AccountContext -Current |
                 Should -Exist
@@ -27,7 +27,7 @@ Describe "Administration of Users and Access" {
             without the user needing to specify what context they are in.
             #>
         }
-        It "creates new application context for Access separation" -Tags "ADM-ACC-04","v0.4.2","Complex" {
+        It "creates new application context for Access separation" -Tag "ADM-ACC-04","v0.4.2","Complex" {
             # Requirement
             New-AccountContext -Name "MyOtherContext"
             Get-AccountContext -Name "MyOtherContext" |
@@ -39,7 +39,7 @@ Describe "Administration of Users and Access" {
             they share with other users.
             #>
         }
-        It "switch between Accessing" -Tags "ADM-ACC-03","v0.4.2","Moderate" {
+        It "switch between Accessing" -Tag "ADM-ACC-03","v0.4.2","Moderate" {
             # Requirement
             Set-AccountContext -Name "MyOtherContext"
             Get-AccountContext -Current |
@@ -53,22 +53,22 @@ Describe "Administration of Users and Access" {
             . $PSScriptRoot\BankMoq.ps1
         }
 
-        It "add Chequing Account from a Bank" -Tags "ADM-BNK-01","vB.1.0","Simple" {
+        It "add Chequing Account from a Bank" -Tag "ADM-BNK-01","vB.1.0","Simple" {
             # Requirement
             Add-BankAccount -AccessToken $token -Name "MyChequingAccount" -Bank "MyBank" -Number 1234561 -Currency CanadianDollar |
                 Should -Exist
         }
-        It "add eSavings Account from a Bank" -Tags "ADM-BNK-02","vB.1.0","Simple" {
+        It "add eSavings Account from a Bank" -Tag "ADM-BNK-02","vB.1.0","Simple" {
             # Requirement
             Add-BankAccount -AccessToken $token -Name "MyESavingsAccount" -Bank "MyBank" -Number 1234562 -Currency CanadianDollar |
                 Should -Exist
         }
-        It "add Credit Card from a Bank" -Tags "ADM-BNK-03","vB.1.0","Simple" {
+        It "add Credit Card from a Bank" -Tag "ADM-BNK-03","vB.1.0","Simple" {
             # Requirement
             Add-BankAccount -AccessToken $token -Name "MyCreditCard" -Bank "MyBank" -Number 1234563 -Currency CanadianDollar |
                 Should -Exist
         }
-        It "lists and filters Bank Accounts" -Tags "ADM-BNK-04","vB.1.0","Moderate" {
+        It "lists and filters Bank Accounts" -Tag "ADM-BNK-04","vB.1.0","Moderate" {
             # Pre-Requisite
             Add-BankAccount -AccessToken $token -Name "MyAccount1" -Bank "MyBank" -Number 1234567 -Currency CanadianDollar
             Add-BankAccount -AccessToken $token -Name "MyAccount2" -Bank "MyBank" -Number 1234568 -Currency CanadianDollar
@@ -82,7 +82,7 @@ Describe "Administration of Users and Access" {
             Get-BankAccount -AccessToken $token -Bank "MyBank" |
                 Should -HaveCount 2
         }
-        It "view Bank Account details" -Tags "ADM-BNK-05","vB.1.0","Simple" {
+        It "view Bank Account details" -Tag "ADM-BNK-05","vB.1.0","Simple" {
             # Pre-Requisite
             Add-BankAccount -AccessToken $token -Name "MyAccount" -Bank "MyBank" -Number 1234567 -Currency CanadianDollar
 
@@ -91,7 +91,7 @@ Describe "Administration of Users and Access" {
                 Select-Object -ExpandProperty Bank |
                 Should -Be "MyBank"
         }
-        It "view Credit Limit" -Tags "ADM-BNK-06","vB.1.3","Moderate" {
+        It "view Credit Limit" -Tag "ADM-BNK-06","vB.1.3","Moderate" {
             # Pre-Requisite
             Add-BankAccount -AccessToken $token -Name "MyAccount" -Bank "MyBank" -Number 1234567 -Currency CanadianDollar
             Add-BankAccount -AccessToken $token -Name "MyCreditCard" -Bank "MyBank" -Number 1234563 -Currency CanadianDollar
@@ -104,7 +104,7 @@ Describe "Administration of Users and Access" {
                 Select-Object -ExpandProperty CreditLimit |
                 Should -BeGreaterThan 0
         }
-        It "update Bank Account details" -Tags "ADM-BNK-07","vB.1.2","Moderate" {
+        It "update Bank Account details" -Tag "ADM-BNK-07","vB.1.2","Moderate" {
             # Pre-Requisite
             Add-BankAccount -AccessToken $token -Name "MyAccount" -Bank "MyBank" -Number 1234567 -Currency CanadianDollar
 
@@ -120,7 +120,7 @@ Describe "Administration of Users and Access" {
                 Select-Object -ExpandProperty Bank |
                 Should -Be "MyAlternateBank"
         }
-        It "delete Bank Account" -Tags "ADM-BNK-08","vB.1.0","Simple" {
+        It "delete Bank Account" -Tag "ADM-BNK-08","vB.1.0","Simple" {
             # Pre-Requisite
             Add-BankAccount -AccessToken $token -Name "MyAccount" -Bank "MyBank" -Number 1234567 -Currency CanadianDollar
 
@@ -135,7 +135,7 @@ Describe "Administration of Users and Access" {
             . $PSScriptRoot\BankMoq.ps1
         }
 
-        It "view single Balance" -Tags "ADM-BKC-01","vB.2.0","Simple" {
+        It "view single Balance" -Tag "ADM-BKC-01","vB.2.0","Simple" {
             # Pre-Requisite
             Add-BankAccount -AccessToken $token -Name "MyAccount" -Bank "MyBank" -Number 1234567 -Currency CanadianDollar
 
@@ -144,7 +144,7 @@ Describe "Administration of Users and Access" {
                 Select-Object -ExpandProperty CurrentFunds |
                 Should -BeGreaterThan 0
         }
-        It "view total Balance" -Tags "ADM-BKC-02","vB.2.0","Moderate" {
+        It "view total Balance" -Tag "ADM-BKC-02","vB.2.0","Moderate" {
             # Pre-Requisite
             Add-BankAccount -AccessToken $token -Name "MyAccount" -Bank "MyBank" -Number 1234567 -Currency CanadianDollar
 
@@ -154,7 +154,7 @@ Describe "Administration of Users and Access" {
                 Select-Object -ExpandProperty Sum |
                 Should -BeGreaterThan 0
         }
-        It "view Transactions" -Tags "ADM-BKC-03","vB.1.0","Simple" {
+        It "view Transactions" -Tag "ADM-BKC-03","vB.1.0","Simple" {
             # Pre-Requisite
             Add-BankAccount -AccessToken $token -Name "MyAccount" -Bank "MyBank" -Number 1234567 -Currency CanadianDollar
             New-SubCategory -AccessToken $token -Category "Bills" -Name "GasBills"
