@@ -12,5 +12,7 @@ namespace Finance.Management.Service.Authenticating.Cmdlets
     [OutputType(typeof(IAccessToken))]
     public sealed class GrantAccessTokenCommand : Cmdlet
     {
+        [Parameter(Mandatory = true, ParameterSetName = "All")]
+        public SwitchParameter All { get; set; }
     }
 }
