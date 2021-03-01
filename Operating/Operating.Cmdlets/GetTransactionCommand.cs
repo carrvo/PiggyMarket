@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 namespace Finance.Management.Service.Operating.Cmdlets
 {
     using ITransaction = ITransaction<ISubCategory<ICategory>, IBankAccount, IPaymentMethod, IEnumerable<ITag>>;
+    using ISubCategory = ISubCategory<ICategory>;
 
     /// <summary>
     /// <para type="synopsis">Searches for the <see cref="ITransaction"/>s.</para>
@@ -50,7 +51,7 @@ namespace Finance.Management.Service.Operating.Cmdlets
 
         /// <summary>
         /// <para type="description">
-        /// Filter for the <see cref="ISubCategpry" /> that gives
+        /// Filter for the <see cref="ISubCategory" /> that gives
         /// the <see cref="ITransaction" /> meaning.
         /// </para>
         /// </summary>

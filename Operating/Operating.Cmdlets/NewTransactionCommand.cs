@@ -8,10 +8,13 @@ using System.Linq;
 using System.Management.Automation;
 using System.Text;
 using System.Threading.Tasks;
+using Finance.Management.Service.Budgeting.Interfaces;
 
 namespace Finance.Management.Service.Operating.Cmdlets
 {
     using ITransaction = ITransaction<ISubCategory<ICategory>, IBankAccount, IPaymentMethod, IEnumerable<ITag>>;
+    using ISubCategory = ISubCategory<ICategory>;
+    using IBudget = IBudget<ICategory, ISubCategory<ICategory>>;
 
     /// <summary>
     /// <para type="synopsis">Moves monetary funds.</para>
@@ -38,7 +41,7 @@ namespace Finance.Management.Service.Operating.Cmdlets
     /// With the ability to itemize <see cref="ITransaction" />s,
     /// common recurring items can be treated in the same fashion
     /// as a <see cref="ISubCategory" /> with the roll-up to
-    /// <see cref="ICategory" /> (for the purposes of <see cref="IBudgeting" />).
+    /// <see cref="ICategory" /> (for the purposes of <see cref="IBudget"/>ing).
     /// </para>
     /// </summary>
     [Cmdlet(VerbsCommon.New, "Transaction", ConfirmImpact = ConfirmImpact.Low, RemotingCapability = RemotingCapability.PowerShell, SupportsPaging = false, SupportsShouldProcess = true)]
@@ -132,7 +135,7 @@ namespace Finance.Management.Service.Operating.Cmdlets
 
         /// <summary>
         /// <para type="description">
-        /// The <see cref="ISubCategpry" /> that gives
+        /// The <see cref="ISubCategory" /> that gives
         /// the <see cref="ITransaction" /> meaning.
         /// </para>
         /// </summary>
@@ -234,7 +237,7 @@ namespace Finance.Management.Service.Operating.Cmdlets
         /// evidence, often used for returns or
         /// <see cref="ITransaction" /> reversals.
         /// Either way, it will show up as a new
-        /// <see cref "ITransaction" /> that has a
+        /// <see cref="ITransaction" /> that has a
         /// <see cref="Price" /> that counteracts this
         /// <see cref="ITransaction" />, or at least
         /// the portion that is being refunded/reversed.
@@ -263,7 +266,7 @@ namespace Finance.Management.Service.Operating.Cmdlets
         /// evidence, often used for returns or
         /// <see cref="ITransaction" /> reversals.
         /// Either way, it will show up as a new
-        /// <see cref "ITransaction" /> that has a
+        /// <see cref="ITransaction" /> that has a
         /// <see cref="Price" /> that counteracts this
         /// <see cref="ITransaction" />, or at least
         /// the portion that is being refunded/reversed.

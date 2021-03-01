@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace Finance.Management.Service.Authenticating.Cmdlets
 {
+    /// <summary>
+    /// <para type="synopsis">Account Context</para>
+    /// </summary>
     [Cmdlet(VerbsCommon.Set, "AccountContext", ConfirmImpact = ConfirmImpact.Medium, RemotingCapability = RemotingCapability.PowerShell, SupportsPaging = false, SupportsShouldProcess = true)]
     public sealed class SetAccountContextCommand : Cmdlet
     {
@@ -18,9 +21,15 @@ namespace Finance.Management.Service.Authenticating.Cmdlets
         [Parameter(Mandatory = true, ParameterSetName = "Guid")]
         public IAccessToken AccessToken { get; set; }
 
+        /// <summary>
+        /// <para type="description">Friendly Name for the <see cref="IAccountContext"/>.</para>
+        /// </summary>
         [Parameter(Mandatory = true, ParameterSetName = "Name")]
         public String Name { get; set; }
 
+        /// <summary>
+        /// <para type="description">Identifier for the <see cref="IAccountContext"/>.</para>
+        /// </summary>
         [Parameter(Mandatory = true, ParameterSetName = "Guid")]
         public Guid Guid { get; set; }
     }

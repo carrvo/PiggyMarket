@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace Finance.Management.Service.Budgeting.Cmdlets
 {
+    /// <summary>
+    /// <para type="synopsis">Used for monetary planning, tracking, and management.</para>
+    /// </summary>
     [Cmdlet(VerbsCommon.Remove, "Budget", ConfirmImpact = ConfirmImpact.High, RemotingCapability = RemotingCapability.PowerShell, SupportsPaging = false, SupportsShouldProcess = true)]
     public sealed class RemoveBudgetCommand : Cmdlet
     {

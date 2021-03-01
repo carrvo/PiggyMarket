@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace Finance.Management.Service.Authenticating.Cmdlets
 {
+    /// <summary>
+    /// <para type="synopsis">Account Context</para>
+    /// </summary>
     [Cmdlet(VerbsSecurity.Grant, "AccountContext", ConfirmImpact = ConfirmImpact.High, RemotingCapability = RemotingCapability.PowerShell, SupportsPaging = false, SupportsShouldProcess = true)]
     public sealed class GrantAccountContextCommand : Cmdlet
     {
@@ -23,6 +26,9 @@ namespace Finance.Management.Service.Authenticating.Cmdlets
         [Parameter(Mandatory = true)]
         public IAccessToken AccessToken { get; set; }
 
+        /// <summary>
+        /// <para type="description"><see cref="Email"/> of a new user to add to the current <see cref="IAccountContext"/>.</para>
+        /// </summary>
         [Parameter(Mandatory = true)]
         [ValidatePattern(ValidEmailPattern)]
         public String Email { get; set; }

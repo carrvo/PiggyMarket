@@ -3,6 +3,10 @@ using System.Collections.Generic;
 
 namespace Finance.Management.Service.Accounting.Interfaces
 {
+    using ISubCategory = ISubCategory<ICategory>;
+
+
+#pragma warning disable CS1574 // XML comment has cref attribute that could not be resolved
     /// <summary>
     /// Defines a type to extend the concept of <see cref="ICategory" />.
     ///
@@ -26,15 +30,16 @@ namespace Finance.Management.Service.Accounting.Interfaces
     /// the use of a <see cref="ITracking" />.
     /// </summary>
     public interface ISubCategory<TCategory>
+#pragma warning restore CS1574 // XML comment has cref attribute that could not be resolved
         where TCategory : ICategory
     {
         /// <summary>
-        /// Identifies the <see cref="ISubCategpry" /> and its meaning.
+        /// Identifies the <see cref="ISubCategory" /> and its meaning.
         /// </summary>
         String Name { get; }
 
         /// <summary>
-        /// Information about the <see cref="ISubCategory">.
+        /// Information about the <see cref="ISubCategory"/>.
         /// </summary>
         String Description { get; }
 

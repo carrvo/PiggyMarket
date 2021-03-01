@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 namespace Finance.Management.Service.Operating.Cmdlets
 {
     using ITransaction = ITransaction<ISubCategory<ICategory>, IBankAccount, IPaymentMethod, IEnumerable<ITag>>;
+    using ISubCategory = ISubCategory<ICategory>;
 
     /// <summary>
     /// <para type="synopsis">Modifies the <see cref="ITransaction"/>.</para>
@@ -44,7 +45,7 @@ namespace Finance.Management.Service.Operating.Cmdlets
 
         /// <summary>
         /// <para type="description">
-        /// The <see cref="ISubCategpry" /> that gives
+        /// The <see cref="ISubCategory" /> that gives
         /// the <see cref="ITransaction" /> meaning.
         /// </para>
         /// </summary>

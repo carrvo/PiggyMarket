@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace Finance.Management.Service.Banking.Cmdlets
 {
+    /// <summary>
+    /// <para type="synopsis">Banking</para>
+    /// </summary>
     [Cmdlet(VerbsCommon.Add, "BankAccount", ConfirmImpact = ConfirmImpact.Low, RemotingCapability = RemotingCapability.PowerShell, SupportsPaging = false, SupportsShouldProcess = true)]
     public sealed class AddBankAccountCommand : Cmdlet
     {

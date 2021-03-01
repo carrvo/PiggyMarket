@@ -1,5 +1,7 @@
 ﻿using Finance.Management.Service.Accounting.Interfaces;
 using Finance.Management.Service.Authenticating.Interfaces;
+using Finance.Management.Service.Banking.Interfaces;
+using Finance.Management.Service.Operating.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,8 +11,11 @@ using System.Threading.Tasks;
 
 namespace Finance.Management.Service.Accounting.Cmdlets
 {
+    using ITransaction = ITransaction<ISubCategory<ICategory>, IBankAccount, IPaymentMethod, IEnumerable<ITag>>;
+    using ISubCategory = ISubCategory<ICategory>;
+
     /// <summary>
-    /// <para type="synopsis">Creates a new <see cref="ISubCategory{ICategory}"/>.</para>
+    /// <para type="synopsis">Creates a new <see cref="ISubCategory"/>.</para>
     /// <para type="description">
     /// This allows for a more fine-grained
     /// organization to provide a higher fidelity view, while
