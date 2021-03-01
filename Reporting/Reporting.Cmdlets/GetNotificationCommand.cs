@@ -10,6 +10,9 @@ using System.Threading.Tasks;
 
 namespace Finance.Management.Service.Reporting.Cmdlets
 {
+    /// <summary>
+    /// <para type="synopsis">Searches for notifications in the system.</para>
+    /// </summary>
     [Cmdlet(VerbsCommon.Get, "Notification", ConfirmImpact = ConfirmImpact.Low, RemotingCapability = RemotingCapability.PowerShell, SupportsPaging = true, SupportsShouldProcess = false)]
     public sealed class GetNotificationCommand : Cmdlet
     {

@@ -5,6 +5,11 @@ using Finance.Management.Service.Banking.Interfaces;
 
 namespace Finance.Management.Service.Operating.Interfaces
 {
+    using ITransaction = ITransaction<ISubCategory<ICategory>, IBankAccount, IPaymentMethod, IEnumerable<ITag>>;
+    using ISubCategory = ISubCategory<ICategory>;
+
+
+#pragma warning disable CS1574 // XML comment has cref attribute that could not be resolved
     /// <summary>
     /// Defines a type that represents monetary funds moving or flowing.
     ///
@@ -29,9 +34,10 @@ namespace Finance.Management.Service.Operating.Interfaces
     /// With the ability to itemize <see cref="ITransaction" />s,
     /// common recurring items can be treated in the same fashion
     /// as a <see cref="ISubCategory" /> with the roll-up to
-    /// <see cref="ICategory" /> (for the purposes of <see cref="IBudgeting" />).
+    /// <see cref="ICategory" /> (for the purposes of <see cref="IBudget" />ing).
     /// </summary>
     public interface ITransaction<TSubCategory, TBanckAccount, TPaymentMethod, TTags>
+#pragma warning restore CS1574 // XML comment has cref attribute that could not be resolved
         where TSubCategory : ISubCategory<ICategory>
         where TBanckAccount : IBankAccount
         where TPaymentMethod : IPaymentMethod
@@ -44,7 +50,7 @@ namespace Finance.Management.Service.Operating.Interfaces
         String Name { get; set; }
 
         /// <summary>
-        /// The <see cref="ISubCategpry" /> that gives
+        /// The <see cref="ISubCategory" /> that gives
         /// the <see cref="ITransaction" /> meaning.
         ///
         /// When the <see cref="ISubCategory" /> is changed,
@@ -56,8 +62,11 @@ namespace Finance.Management.Service.Operating.Interfaces
         /// <summary>
         /// The physical <see cref="IBankAccount" /> that
         /// the <see cref="ITransaction" /> belongs to.
+        /// 
+        /// This will be <see cref="Nullable"/> for
+        /// <see cref="EPaymentMethod.Cash"/> purchases.
         /// </summary>
-        TBanckAccount? BankAccount { get; }
+        TBanckAccount BankAccount { get; }
 
         /// <summary>
         /// <see cref="IPaymentMethod"/> used.
@@ -85,10 +94,10 @@ namespace Finance.Management.Service.Operating.Interfaces
         ///
         /// Allows for the itemization of transactions.
         /// </summary>
-        /// <param name="originalName">New name for the original <see cref="ITransaction">.<param/>
-        /// <param name="newName">New name for the new <see cref="ITransaction">.<param/>
-        /// <param name="newPrice"><see cref="Price"> for the new <see cref="ITransaction">,
-        /// whose value is subtracted from the original <see cref="ITransaction">.<param/>
+        /// <param name="originalName">New name for the original <see cref="ITransaction"/>.</param>
+        /// <param name="newName">New name for the new <see cref="ITransaction"/>.</param>
+        /// <param name="newPrice"><see cref="Price"/> for the new <see cref="ITransaction"/>,
+        /// whose value is subtracted from the original <see cref="ITransaction"/>.</param>
         void Split(String originalName, String newName, Double newPrice);
 
         /// <summary>
@@ -142,7 +151,7 @@ namespace Finance.Management.Service.Operating.Interfaces
         /// evidence, often used for returns or
         /// <see cref="ITransaction" /> reversals.
         /// Either way, it will show up as a new
-        /// <see cref "ITransaction" /> that has a
+        /// <see cref="ITransaction" /> that has a
         /// <see cref="Price" /> that counteracts this
         /// <see cref="ITransaction" />, or at least
         /// the portion that is being refunded/reversed.
@@ -150,9 +159,9 @@ namespace Finance.Management.Service.Operating.Interfaces
         String ReceiptID { get; }
 
         /// <summary>
-        /// Determines whether the <see cref="ITransaction">
+        /// Determines whether the <see cref="ITransaction"/>
         /// has been confirmed by two sources of authority
-        /// (purchase and <see cref="IBankAccount">).
+        /// (purchase and <see cref="IBankAccount"/>).
         /// </summary>
         Boolean Verified { get; }
     }

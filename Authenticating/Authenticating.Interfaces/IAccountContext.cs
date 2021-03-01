@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Finance.Management.Service.Authenticating.Interfaces
 {
+    /// <summary>
+    /// A logical grouping of the system's functionality to provide access control.
+    /// </summary>
     public interface IAccountContext
     {
         /// <summary>

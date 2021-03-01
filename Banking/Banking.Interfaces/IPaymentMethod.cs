@@ -6,10 +6,21 @@ using System.Threading.Tasks;
 
 namespace Finance.Management.Service.Banking.Interfaces
 {
+    /// <summary>
+    /// Defines a type to express Payment method for a transaction.
+    /// 
+    /// Useful for metrics.
+    /// </summary>
     public interface IPaymentMethod
     {
+        /// <summary>
+        /// User friendly representation of the <see cref="Method"/>.
+        /// </summary>
         String Name { get; }
 
+        /// <summary>
+        /// Underlying representation.
+        /// </summary>
         EPaymentMethod Method { get; }
     }
 }

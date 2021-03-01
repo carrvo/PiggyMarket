@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace Finance.Management.Service.Banking.Cmdlets
 {
+    /// <summary>
+    /// <para type="synopsis">Banking</para>
+    /// </summary>
     [Cmdlet(VerbsCommon.Get, "BankGroup", ConfirmImpact = ConfirmImpact.None, RemotingCapability = RemotingCapability.PowerShell, SupportsPaging = true, SupportsShouldProcess = false)]
     public sealed class GetBankGroupCommand : Cmdlet
     {

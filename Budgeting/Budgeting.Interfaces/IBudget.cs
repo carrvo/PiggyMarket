@@ -4,6 +4,11 @@ using Finance.Management.Service.Accounting.Interfaces;
 
 namespace Finance.Management.Service.Budgeting.Interfaces
 {
+    using IBudget = IBudget<ICategory, ISubCategory<ICategory>>;
+    using ISubCategory = ISubCategory<ICategory>;
+
+
+#pragma warning disable CS1574 // XML comment has cref attribute that could not be resolved
     /// <summary>
     /// Defines a type that is used for monetary
     /// planning, tracking, and management.
@@ -11,22 +16,22 @@ namespace Finance.Management.Service.Budgeting.Interfaces
     /// This is the linchpin of the system. This is
     /// where user's are to define the monetary funds
     /// that they allocate, including their income.
-    /// This is also where new <see cref="ITracking">
-    /// are defined on a <see cref="IBudget.Period">ic
+    /// This is also where new <see cref="ITracking"/>
+    /// are defined on a <see cref="IBudget.Period"/>ic
     /// basis. This type defines the planning stage to
-    /// inform the <see cref="ICategory"> management and
-    /// <see cref="ITracking">; all of which form the
-    /// complete <see cref="IBudget">ing system.
+    /// inform the <see cref="ICategory"/> management and
+    /// <see cref="ITracking"/>; all of which form the
+    /// complete <see cref="IBudget"/>ing system.
     ///
-    /// The complete <see cref="IBudget">ing system is
+    /// The complete <see cref="IBudget"/>ing system is
     /// intended to function as follows:
     /// 1) A user allocates monetary funds to a
-    /// <see cref="ICategory"> using a <see cref="IBudget">.
+    /// <see cref="ICategory"/> using a <see cref="IBudget"/>.
     /// 2) The user then spends the allocated monetary funds
-    /// from their <see cref="ICategory">, treating it as a
-    /// virtual <see cref="IAccountable">, and also selecting
-    /// a physical <see cref="IAccountable"> for which to
-    /// spend from--together forming the <see cref="ITransaction">.
+    /// from their <see cref="ICategory"/>, treating it as a
+    /// virtual <see cref="IAccountable"/>, and also selecting
+    /// a physical <see cref="IAccountable"/> for which to
+    /// spend from--together forming the <see cref="ITransaction"/>.
     /// 3) Finally the user <see cref="ITracking">Tracks</see> the
     /// <see cref="ITransaction" />s at the end of the
     /// <see cref="IBudget.Period" /> to see whether they were
@@ -38,6 +43,7 @@ namespace Finance.Management.Service.Budgeting.Interfaces
     /// affordable for the user.
     /// </summary>
     public interface IBudget<TCategory, TSubCategory>
+#pragma warning restore CS1574 // XML comment has cref attribute that could not be resolved
         where TCategory : ICategory
         where TSubCategory : ISubCategory<TCategory>
     {
@@ -45,7 +51,7 @@ namespace Finance.Management.Service.Budgeting.Interfaces
         /// Identifies the <see cref="IBudget" /> and is
         /// what the <see cref="IBudget" /> applies against.
         ///
-        /// The <see cref="Period">ic monetary value is
+        /// The <see cref="Period"/>ic monetary value is
         /// allocated to this <see cref="IAccountable" />
         /// as funds.
         /// </summary>
@@ -59,8 +65,11 @@ namespace Finance.Management.Service.Budgeting.Interfaces
         /// as to which derives the <see cref="Category" />:
         /// a <see cref="ICategory" /> directly or
         /// a <see cref="ISubCategory" /> indirectly.
+        /// 
+        /// This will be <see cref="Nullable"/> when
+        /// by <see cref="ICategory"/> over <see cref="ISubCategory"/>.
         /// </summary>
-        TSubCategory? SubCategory { get; }
+        TSubCategory SubCategory { get; }
 
         /// <summary>
         /// The monetary value that is being allocated

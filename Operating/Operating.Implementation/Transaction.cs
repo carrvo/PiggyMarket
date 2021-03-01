@@ -31,7 +31,7 @@ namespace Finance.Management.Service.Operating.Implementation
 
         public ICategory Category => SubCategory.Category;
 
-        public TBankAccount? BankAccount => throw new NotImplementedException();
+        public TBankAccount BankAccount => throw new NotImplementedException();
 
         public TPymentMethod PaymentMethod => throw new NotImplementedException();
 

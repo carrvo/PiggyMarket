@@ -20,7 +20,7 @@ namespace Finance.Management.Service.Budgeting.Implementation
 
         public TCategory Category => throw new NotImplementedException();
 
-        public TSubCategory? SubCategory => throw new NotImplementedException();
+        public TSubCategory SubCategory => throw new NotImplementedException();
 
         public double Target { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 
 namespace Finance.Management.Service.Accounting.Interfaces
 {
+
+#pragma warning disable CS1574 // XML comment has cref attribute that could not be resolved
     /// <summary>
     /// Defines a type to categorize <see cref="ITransaction" />.
     /// This is used for budgeting purposes to organize
@@ -20,6 +22,7 @@ namespace Finance.Management.Service.Accounting.Interfaces
     /// providing a course-grained view.
     /// </summary>
     public interface ICategory
+#pragma warning restore CS1574 // XML comment has cref attribute that could not be resolved
     {
         /// <summary>
         /// Identifies the <see cref="ICategory" /> and its meaning.
@@ -27,7 +30,7 @@ namespace Finance.Management.Service.Accounting.Interfaces
         String Name { get; }
 
         /// <summary>
-        /// Information about the <see cref="ICategory">.
+        /// Information about the <see cref="ICategory"/>.
         /// </summary>
         String Description { get; }
 
