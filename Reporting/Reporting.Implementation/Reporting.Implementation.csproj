@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>Finance.Management.Service.Reporting.Implementation</RootNamespace>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>..\..\Integration\Configuration\bin\</OutputPath>
+    <DocumentationFile>..\..\Integration\Configuration\bin\Reporting.Implementation.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <OutputPath>..\..\Integration\Configuration\bin\</OutputPath>
+    <DocumentationFile>..\..\Integration\Configuration\bin\Reporting.Implementation.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Authenticating\Authenticating.Interfaces\Authenticating.Interfaces.csproj" />
+    <ProjectReference Include="..\..\Banking\Banking.Interfaces\Banking.Interfaces.csproj" />
+    <ProjectReference Include="..\..\Operating\Operating.Interfaces\Operating.Interfaces.csproj" />
+    <ProjectReference Include="..\Reporting.Interfaces\Reporting.Interfaces.csproj" />
+  </ItemGroup>
+
+</Project>

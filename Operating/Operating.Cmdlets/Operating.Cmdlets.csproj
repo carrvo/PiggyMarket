@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>Finance.Management.Service.Operating.Cmdlets</RootNamespace>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>..\..\Integration\Configuration\bin\</OutputPath>
+    <DocumentationFile>..\..\Integration\Configuration\bin\Operating.Cmdlets.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <OutputPath>..\..\Integration\Configuration\bin\</OutputPath>
+    <DocumentationFile>..\..\Integration\Configuration\bin\Operating.Cmdlets.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="PowerShellStandard.Library" Version="5.1.0" />
+    <PackageReference Include="XmlDoc2CmdletDoc" Version="0.3.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Authenticating\Authenticating.Interfaces\Authenticating.Interfaces.csproj" />
+    <ProjectReference Include="..\..\Budgeting\Budgeting.Interfaces\Budgeting.Interfaces.csproj" />
+    <ProjectReference Include="..\Operating.Interfaces\Operating.Interfaces.csproj" />
+  </ItemGroup>
+
+</Project>

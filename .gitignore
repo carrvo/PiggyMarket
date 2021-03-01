@@ -58,3 +58,21 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+######### Custom ######################
+
+# Cache
+*.cache
+*.nuget.dgspec.json
+*.nuget.g.props
+*.nuget.g.targets
+*project.assets.json
+*project.nuget.cache
+
+# Build
+**/net5.0/*.FileListAbsolute.txt
+**/net5.0/*.CopyComplete
+**/net5.0/*ref/*
+**/net5.0/*.dll
+
+# Output
+/Integration/Configuration/bin/

@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>Finance.Management.Service.Authenticating.Implementation</RootNamespace>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>..\..\Integration\Configuration\bin\</OutputPath>
+    <DocumentationFile>..\..\Integration\Configuration\bin\Authenticating.Implementation.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <OutputPath>..\..\Integration\Configuration\bin\</OutputPath>
+    <DocumentationFile>..\..\Integration\Configuration\bin\Authenticating.Implementation.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Authenticating.Interfaces\Authenticating.Interfaces.csproj" />
+  </ItemGroup>
+
+</Project>
