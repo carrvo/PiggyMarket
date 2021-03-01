@@ -22,6 +22,28 @@ namespace Finance.Management.Service.Banking.Implementation
 
         public string BankName => throw new NotImplementedException();
 
+        /// <summary>
+        /// The number used to identify the financial institution.
+        /// </summary>
+        private Int32 TransitNumber
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        /// <summary>
+        /// The number used to identify the account at the bank.
+        /// </summary>
+        private Int64 AccountNumber
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+        }
+
         public double CurrentFunds => throw new NotImplementedException();
 
         public ECurrency Currency => throw new NotImplementedException();

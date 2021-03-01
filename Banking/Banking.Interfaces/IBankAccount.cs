@@ -20,16 +20,6 @@ namespace Finance.Management.Service.Banking.Interfaces
         String BankName { get; }
 
         /// <summary>
-        /// The number used to identify the financial institution.
-        /// </summary>
-        // Int32 TransitNumber { get; }
-
-        /// <summary>
-        /// The number used to identify the account at the bank.
-        /// </summary>
-        // Int64 AccountNumber { get; }
-
-        /// <summary>
         /// The monetary value being stored.
         /// </summary>
         Double CurrentFunds { get; }
