@@ -65,10 +65,11 @@ RequiredAssemblies = 'bin\net5.0\Accounting.Interfaces.dll',
                'bin\net5.0\Operating.Cmdlets.dll', 
                'bin\net5.0\Operating.Implementation.dll', 
                'bin\net5.0\Reporting.Interfaces.dll', 
-               'bin\net5.0\Reporting.Implementation.dll'
+               'bin\net5.0\Reporting.Implementation.dll', 
+               'bin\net5.0\ThirdParty.Implementation.dll'
 
 # Script files (.ps1) that are run in the caller's environment prior to importing this module.
-# ScriptsToProcess = @()
+ScriptsToProcess = 'Configuration.ps1'
 
 # Type files (.ps1xml) to be loaded when importing this module
 # TypesToProcess = @()
@@ -83,7 +84,8 @@ NestedModules = @('.\bin\net5.0\Accounting.Cmdlets.dll',
                '.\bin\net5.0\Budgeting.Cmdlets.dll', 
                '.\bin\net5.0\Operating.Cmdlets.dll', 
                '.\bin\net5.0\Reporting.Cmdlets.dll', 
-               '.\bin\net5.0\Utilities.Cmdlets.dll')
+               '.\bin\net5.0\Utilities.Cmdlets.dll', 
+               '.\bin\net5.0\ThirdParty.Cmdlets.dll')
 
 # Functions to export from this module, for best performance, do not use wildcards and do not delete the entry, use an empty array if there are no functions to export.
 FunctionsToExport = '*'
@@ -122,7 +124,9 @@ FileList = 'bin\net5.0\Accounting.Cmdlets.dll-Help.xml',
                'bin\net5.0\Reporting.Cmdlets.dll-Help.xml', 
                'bin\net5.0\Reporting.Interfaces.xml', 
                'bin\net5.0\Reporting.Implementation.xml', 
-               'bin\net5.0\Utilities.Cmdlets.dll-Help.xml'
+               'bin\net5.0\Utilities.Cmdlets.dll-Help.xml', 
+               'bin\net5.0\ThirdParty.Implementation.xml', 
+               'bin\net5.0\ThirdParty.Cmdlets.dll-Help.xml'
 
 # Private data to pass to the module specified in RootModule/ModuleToProcess. This may also contain a PSData hashtable with additional module metadata used by PowerShell.
 PrivateData = @{
