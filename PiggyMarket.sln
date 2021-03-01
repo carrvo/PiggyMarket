@@ -29,6 +29,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UseCases", "UseCases", "{B8
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Authenticating", "Authenticating", "{BE8A6147-0C9A-4285-9749-E2E825A405C3}"
+	ProjectSection(SolutionItems) = preProject
+		Authenticating\README.md = Authenticating\README.md
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Banking", "Banking", "{76F0860A-03F4-46DC-8A29-1CCF8C8D2B3C}"
 	ProjectSection(SolutionItems) = preProject
@@ -106,6 +109,9 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Accounting.UnitTests", "Accounting\Accounting.UnitTests\Accounting.UnitTests.csproj", "{D8581C21-2773-4850-B511-02F78545393B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Utilities", "Utilities", "{3B40169D-42E4-4659-9E8F-F5B96D32318E}"
+	ProjectSection(SolutionItems) = preProject
+		Utilities\README.md = Utilities\README.md
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Utilities.Cmdlets", "Utilities\Utilities.Cmdlets\Utilities.Cmdlets.csproj", "{39DE4108-C09D-4748-BEB1-34D35091137A}"
 EndProject
@@ -115,9 +121,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Configuration", "Configurat
 		Integration\Configuration\Configuration.ps1 = Integration\Configuration\Configuration.ps1
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThirdParty.Implementation", "Utilities\ThirdParty.Implementation\ThirdParty.Implementation.csproj", "{19A8BFED-9F9E-40B9-910A-D60C2668E6AD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ThirdParty.Implementation", "Utilities\ThirdParty.Implementation\ThirdParty.Implementation.csproj", "{19A8BFED-9F9E-40B9-910A-D60C2668E6AD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThirdParty.Cmdlets", "Utilities\ThirdParty.Cmdlets\ThirdParty.Cmdlets.csproj", "{EC6338FE-0FB6-4C1C-90E7-67E2A49C3FE4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ThirdParty.Cmdlets", "Utilities\ThirdParty.Cmdlets\ThirdParty.Cmdlets.csproj", "{EC6338FE-0FB6-4C1C-90E7-67E2A49C3FE4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
