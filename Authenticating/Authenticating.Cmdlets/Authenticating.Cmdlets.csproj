@@ -24,6 +24,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Authenticating.Implementation\Authenticating.Implementation.csproj" />
     <ProjectReference Include="..\Authenticating.Interfaces\Authenticating.Interfaces.csproj" />
   </ItemGroup>
 

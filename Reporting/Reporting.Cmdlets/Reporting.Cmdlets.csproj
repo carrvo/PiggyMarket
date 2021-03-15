@@ -26,6 +26,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\Accounting\Accounting.Interfaces\Accounting.Interfaces.csproj" />
     <ProjectReference Include="..\..\Authenticating\Authenticating.Interfaces\Authenticating.Interfaces.csproj" />
+    <ProjectReference Include="..\Reporting.Implementation\Reporting.Implementation.csproj" />
     <ProjectReference Include="..\Reporting.Interfaces\Reporting.Interfaces.csproj" />
   </ItemGroup>
 

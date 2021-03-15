@@ -25,6 +25,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Authenticating\Authenticating.Interfaces\Authenticating.Interfaces.csproj" />
+    <ProjectReference Include="..\Banking.Implementation\Banking.Implementation.csproj" />
+    <ProjectReference Include="..\Banking.Interfaces\Banking.Interfaces.csproj" />
   </ItemGroup>
 
 </Project>
