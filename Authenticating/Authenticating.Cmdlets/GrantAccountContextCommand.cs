@@ -18,7 +18,7 @@ namespace Finance.Management.Service.Authenticating.Cmdlets
         /// Kudoos to: https://stackoverflow.com/questions/201323/how-to-validate-an-email-address-using-a-regular-expression
         /// Reference: http://worsethanfailure.com/articles/Validating_Email_Addresses
         /// </summary>
-        const String ValidEmailPattern = "^[-!#$%&'*+/0-9=?A-Z^_a-z{|}~](\\.?[-!#$%&'*+/0-9=?A-Z^_a-z{|}~])*@[a-zA-Z] (-?[a-zA-Z0-9])*(\\.[a-zA-Z] (-?[a-zA-Z0-9])*)+$";
+        private const String VALID_EMAIL_PATTERN = "^[-!#$%&'*+/0-9=?A-Z^_a-z{|}~](\\.?[-!#$%&'*+/0-9=?A-Z^_a-z{|}~])*@[a-zA-Z] (-?[a-zA-Z0-9])*(\\.[a-zA-Z] (-?[a-zA-Z0-9])*)+$";
 
         /// <summary>
         /// <para type="description">Security token to determine access control permissions.</para>
@@ -30,7 +30,7 @@ namespace Finance.Management.Service.Authenticating.Cmdlets
         /// <para type="description"><see cref="Email"/> of a new user to add to the current <see cref="IAccountContext"/>.</para>
         /// </summary>
         [Parameter(Mandatory = true)]
-        [ValidatePattern(ValidEmailPattern)]
+        [ValidatePattern(VALID_EMAIL_PATTERN)]
         public String Email { get; set; }
     }
 }

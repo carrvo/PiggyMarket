@@ -15,6 +15,7 @@ namespace Finance.Management.Service.Authenticating.Interfaces
     /// </summary>
     public interface IAccessToken
     {
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
         IAccountContext Context { get; }
 
         IIdentity Identity { get; }
@@ -26,5 +27,6 @@ namespace Finance.Management.Service.Authenticating.Interfaces
         Claim Claim { get; }
 
         IReadOnlySet<String> Roles { get; }
+#pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
     }
 }
