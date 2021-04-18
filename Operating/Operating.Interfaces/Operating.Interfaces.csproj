@@ -17,7 +17,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Accounting\Accounting.Interfaces\Accounting.Interfaces.csproj" />
-    <ProjectReference Include="..\..\Banking\Banking.Interfaces\Banking.Interfaces.csproj" />
   </ItemGroup>
 
 </Project>

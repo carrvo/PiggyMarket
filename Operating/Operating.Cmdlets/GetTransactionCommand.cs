@@ -1,6 +1,7 @@
 ﻿using Finance.Management.Service.Accounting.Interfaces;
 using Finance.Management.Service.Authenticating.Interfaces;
 using Finance.Management.Service.Banking.Interfaces;
+using Finance.Management.Service.Operating.Implementation;
 using Finance.Management.Service.Operating.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -11,14 +12,14 @@ using System.Threading.Tasks;
 
 namespace Finance.Management.Service.Operating.Cmdlets
 {
-    using ITransaction = ITransaction<ISubCategory<ICategory>, IBankAccount, IPaymentMethod, IEnumerable<ITag>>;
+    using ITransaction = ITransaction<ISubCategory<ICategory>, IEnumerable<ITag>>;
     using ISubCategory = ISubCategory<ICategory>;
 
     /// <summary>
     /// <para type="synopsis">Searches for the <see cref="ITransaction"/>s.</para>
     /// </summary>
     [Cmdlet(VerbsCommon.Get, "Transaction", ConfirmImpact = ConfirmImpact.None, DefaultParameterSetName = "All", RemotingCapability = RemotingCapability.PowerShell, SupportsPaging = true, SupportsShouldProcess = false)]
-    [OutputType(typeof(ITransaction))]
+    [OutputType(typeof(Transaction<ISubCategory<ICategory>, IBankAccount, IPaymentMethod, IEnumerable<ITag>>))]
     public sealed class GetTransactionCommand : Cmdlet
     {
         /// <summary>

@@ -40,6 +40,21 @@ should help with understanding), are as follows:
 
 ## Design
 
+### Input-Focused
+The component-level API shall be defined in terms of its inputs.
+This focus allows the output to be naturally defined by the component
+it is meant to feed into.
+
+Instead of providing expected outcomes that are to be consumed as a
+dependency, each component (and the application's use as a third-party)
+is expected to define its own independent needs and then use the
+Adapter Pattern for another component (or the application) to be mapped to.
+This is meant to create a divide between the component (or application)
+and its dependencies, whereby the adapter acts as an implementation bridge.
+
+The exclusion to this is any needs that are common to many components
+may be consolidated into the API of the component providing those needs.
+
 ## UML
 
 ## Building

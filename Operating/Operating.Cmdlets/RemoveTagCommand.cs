@@ -1,5 +1,6 @@
 ﻿using Finance.Management.Service.Accounting.Interfaces;
 using Finance.Management.Service.Banking.Interfaces;
+using Finance.Management.Service.Operating.Implementation;
 using Finance.Management.Service.Operating.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -10,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Finance.Management.Service.Operating.Cmdlets
 {
-    using ITransaction = ITransaction<ISubCategory<ICategory>, IBankAccount, IPaymentMethod, IEnumerable<ITag>>;
+    using ITransaction = ITransaction<ISubCategory<ICategory>, IEnumerable<ITag>>;
 
     /// <summary>
     /// <para type="synopsis">Removes additional meta-data meaning to an <see cref="ITransaction"/>.</para>
@@ -20,7 +21,7 @@ namespace Finance.Management.Service.Operating.Cmdlets
     /// </para>
     /// </summary>
     [Cmdlet(VerbsCommon.Remove, "Tag", ConfirmImpact = ConfirmImpact.Low, RemotingCapability = RemotingCapability.PowerShell, SupportsPaging = false, SupportsShouldProcess = true)]
-    [OutputType(typeof(ITransaction))]
+    [OutputType(typeof(Transaction<ISubCategory<ICategory>, IBankAccount, IPaymentMethod, IEnumerable<ITag>>))]
     public sealed class RemoveTagCommand : Cmdlet
     {
         /// <summary>

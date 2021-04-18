@@ -17,6 +17,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Accounting\Accounting.Interfaces\Accounting.Interfaces.csproj" />
+    <ProjectReference Include="..\..\Operating\Operating.Interfaces\Operating.Interfaces.csproj" />
   </ItemGroup>
 
 </Project>

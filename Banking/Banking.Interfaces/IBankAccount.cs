@@ -18,15 +18,5 @@ namespace Finance.Management.Service.Banking.Interfaces
         /// The name of the financial institution that the bank account belongs to.
         /// </summary>
         String BankName { get; }
-
-        /// <summary>
-        /// The monetary value being stored.
-        /// </summary>
-        Double CurrentFunds { get; }
-
-        /// <summary>
-        /// The monetary system the value is being stored in.
-        /// </summary>
-        ECurrency Currency { get; }
     }
 }

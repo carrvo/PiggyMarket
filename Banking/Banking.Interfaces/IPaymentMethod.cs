@@ -14,11 +14,6 @@ namespace Finance.Management.Service.Banking.Interfaces
     public interface IPaymentMethod
     {
         /// <summary>
-        /// User friendly representation of the <see cref="Method"/>.
-        /// </summary>
-        String Name { get; }
-
-        /// <summary>
         /// Underlying representation.
         /// </summary>
         EPaymentMethod Method { get; }

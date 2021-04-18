@@ -1,5 +1,6 @@
 ﻿using Finance.Management.Service.Accounting.Interfaces;
 using Finance.Management.Service.Banking.Interfaces;
+using Finance.Management.Service.Operating.Implementation;
 using Finance.Management.Service.Operating.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -10,14 +11,14 @@ using System.Threading.Tasks;
 
 namespace Finance.Management.Service.Operating.Cmdlets
 {
-    using ITransaction = ITransaction<ISubCategory<ICategory>, IBankAccount, IPaymentMethod, IEnumerable<ITag>>;
+    using ITransaction = ITransaction<ISubCategory<ICategory>, IEnumerable<ITag>>;
     using ISubCategory = ISubCategory<ICategory>;
 
     /// <summary>
     /// <para type="synopsis">Modifies the <see cref="ITransaction"/>.</para>
     /// </summary>
     [Cmdlet(VerbsData.Edit, "Transaction", ConfirmImpact = ConfirmImpact.Medium, DefaultParameterSetName = "SubCategory", RemotingCapability = RemotingCapability.PowerShell, SupportsPaging = false, SupportsShouldProcess = true)]
-    [OutputType(typeof(ITransaction))]
+    [OutputType(typeof(Transaction<ISubCategory<ICategory>, IBankAccount, IPaymentMethod, IEnumerable<ITag>>))]
     public sealed class EditTransactionCommand : Cmdlet
     {
         /// <summary>

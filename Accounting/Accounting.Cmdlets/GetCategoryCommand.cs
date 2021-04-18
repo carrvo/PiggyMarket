@@ -1,6 +1,6 @@
-﻿using Finance.Management.Service.Accounting.Interfaces;
+﻿using Finance.Management.Service.Accounting.Implementation;
+using Finance.Management.Service.Accounting.Interfaces;
 using Finance.Management.Service.Authenticating.Interfaces;
-using Finance.Management.Service.Banking.Interfaces;
 using Finance.Management.Service.Operating.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Finance.Management.Service.Accounting.Cmdlets
 {
-    using ITransaction = ITransaction<ISubCategory<ICategory>, IBankAccount, IPaymentMethod, IEnumerable<ITag>>;
+    using ITransaction = ITransaction<ISubCategory<ICategory>, IEnumerable<ITag>>;
 
     /// <summary>
     /// <para type="synopsis">Retrives the <see cref="ICategory"/>s.</para>
@@ -28,7 +28,7 @@ namespace Finance.Management.Service.Accounting.Cmdlets
     /// </para>
     /// </summary>
     [Cmdlet(VerbsCommon.Get, "Category", ConfirmImpact = ConfirmImpact.None, RemotingCapability = RemotingCapability.PowerShell, SupportsPaging = true, SupportsShouldProcess = false)]
-    [OutputType(typeof(ICategory))]
+    [OutputType(typeof(Category))]
     public sealed class GetCategoryCommand : Cmdlet
     {
         /// <summary>

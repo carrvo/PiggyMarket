@@ -9,12 +9,13 @@ using System.Management.Automation;
 using System.Text;
 using System.Threading.Tasks;
 using Finance.Management.Service.Budgeting.Interfaces;
+using Finance.Management.Service.Operating.Implementation;
 
 namespace Finance.Management.Service.Operating.Cmdlets
 {
-    using ITransaction = ITransaction<ISubCategory<ICategory>, IBankAccount, IPaymentMethod, IEnumerable<ITag>>;
+    using ITransaction = ITransaction<ISubCategory<ICategory>, IEnumerable<ITag>>;
     using ISubCategory = ISubCategory<ICategory>;
-    using IBudget = IBudget<ICategory, ISubCategory<ICategory>>;
+    using IBudget = IBudget<ICategory>;
 
     /// <summary>
     /// <para type="synopsis">Moves monetary funds.</para>
@@ -45,7 +46,7 @@ namespace Finance.Management.Service.Operating.Cmdlets
     /// </para>
     /// </summary>
     [Cmdlet(VerbsCommon.New, "Transaction", ConfirmImpact = ConfirmImpact.Low, RemotingCapability = RemotingCapability.PowerShell, SupportsPaging = false, SupportsShouldProcess = true)]
-    [OutputType(typeof(ITransaction))]
+    [OutputType(typeof(Transaction<ISubCategory<ICategory>, IBankAccount, IPaymentMethod, IEnumerable<ITag>>))]
     public sealed class NewTransactionCommand : Cmdlet
     {
         /// <summary>

@@ -1,6 +1,6 @@
 ﻿using Finance.Management.Service.Accounting.Interfaces;
 using Finance.Management.Service.Authenticating.Interfaces;
-using Finance.Management.Service.Banking.Interfaces;
+using Finance.Management.Service.Budgeting.Implementation;
 using Finance.Management.Service.Budgeting.Interfaces;
 using Finance.Management.Service.Operating.Interfaces;
 using Finance.Management.Service.Reporting.Interfaces;
@@ -13,9 +13,8 @@ using System.Threading.Tasks;
 
 namespace Finance.Management.Service.Budgeting.Cmdlets
 {
-    using ITransaction = ITransaction<ISubCategory<ICategory>, IBankAccount, IPaymentMethod, IEnumerable<ITag>>;
-    using ITracking = ITracking<IEnumerable<ITrendable>, IEnumerable<ITransaction<ISubCategory<ICategory>, IBankAccount, IPaymentMethod, IEnumerable<ITag>>>>;
-    using IBudget = IBudget<ICategory, ISubCategory<ICategory>>;
+    using ITransaction = ITransaction<ISubCategory<ICategory>, IEnumerable<ITag>>;
+    using IBudget = IBudget<ICategory>;
 
     /// <summary>
     /// <para type="synopsis">Used for monetary planning, tracking, and management.</para>
@@ -53,7 +52,7 @@ namespace Finance.Management.Service.Budgeting.Cmdlets
     /// </para>
     /// </summary>
     [Cmdlet(VerbsCommon.Get, "Budget", ConfirmImpact = ConfirmImpact.None, DefaultParameterSetName = "Category", RemotingCapability = RemotingCapability.PowerShell, SupportsPaging = true, SupportsShouldProcess = false)]
-    [OutputType(typeof(IBudget<ICategory, ISubCategory<ICategory>>))]
+    [OutputType(typeof(Budget<ICategory, ISubCategory<ICategory>>))]
     public sealed class GetBudgetCommand : Cmdlet
     {
         /// <summary>

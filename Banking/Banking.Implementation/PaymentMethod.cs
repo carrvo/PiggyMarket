@@ -9,15 +9,26 @@ using System.Threading.Tasks;
 
 namespace Finance.Management.Service.Banking.Implementation
 {
-    class PaymentMethod : IPaymentMethod, ITrendable
+    /// <summary>
+    /// Defines a type to express Payment method for a transaction.
+    /// 
+    /// Useful for metrics.
+    /// </summary>
+    public class PaymentMethod : ITrendable
     {
         /// <summary>
         /// Security token to determine access control permissions.
         /// </summary>
         protected IAccessToken AccessToken { get; }
 
+        /// <summary>
+        /// User friendly representation of the <see cref="Method"/>.
+        /// </summary>
         public String Name => Method.ToString();
 
+        /// <summary>
+        /// Underlying representation.
+        /// </summary>
         public EPaymentMethod Method => throw new NotImplementedException();
     }
 }
