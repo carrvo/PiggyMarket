@@ -127,6 +127,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ThirdParty.Implementation",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ThirdParty.Cmdlets", "Utilities\ThirdParty.Cmdlets\ThirdParty.Cmdlets.csproj", "{EC6338FE-0FB6-4C1C-90E7-67E2A49C3FE4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThirdParty.Interfaces", "Utilities\ThirdParty.Interfaces\ThirdParty.Interfaces.csproj", "{7E827B75-D87C-438D-A1EF-CD56FCF3A036}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -241,6 +243,10 @@ Global
 		{EC6338FE-0FB6-4C1C-90E7-67E2A49C3FE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EC6338FE-0FB6-4C1C-90E7-67E2A49C3FE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EC6338FE-0FB6-4C1C-90E7-67E2A49C3FE4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E827B75-D87C-438D-A1EF-CD56FCF3A036}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E827B75-D87C-438D-A1EF-CD56FCF3A036}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E827B75-D87C-438D-A1EF-CD56FCF3A036}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E827B75-D87C-438D-A1EF-CD56FCF3A036}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -275,6 +281,7 @@ Global
 		{E11372B6-164A-4615-98B2-9F817A27D656} = {C8EEA3B5-4E0D-4DA1-910F-F42DC7811DCE}
 		{19A8BFED-9F9E-40B9-910A-D60C2668E6AD} = {3B40169D-42E4-4659-9E8F-F5B96D32318E}
 		{EC6338FE-0FB6-4C1C-90E7-67E2A49C3FE4} = {3B40169D-42E4-4659-9E8F-F5B96D32318E}
+		{7E827B75-D87C-438D-A1EF-CD56FCF3A036} = {3B40169D-42E4-4659-9E8F-F5B96D32318E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B868A028-BD57-4B2B-A9B4-02B29A4D5304}
